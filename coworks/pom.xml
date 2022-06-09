@@ -27,6 +27,7 @@
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
 			</exclusions>
+
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
