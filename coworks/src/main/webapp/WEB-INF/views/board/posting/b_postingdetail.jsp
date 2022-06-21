@@ -59,6 +59,7 @@ h1 {
 .detailInfo li::after {
 	padding-left: 5px;
 	content: "|";
+	
 }
 
 .detailInfo li:first-child::after {
@@ -238,18 +239,27 @@ h1 {
         </ul>
       </li> <!--  End Forms Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span id="font">자유게시판</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/board/list-posting">
-              <i class="bi bi-circle"></i><span>게시판1</span>
-            </a>
-          </li>
-        </ul>
-      </li> <!--  End Tables Nav -->
+     <li class="nav-item"><a class="nav-link collapsed"
+				data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+					<i class="bi bi-layout-text-window-reverse"></i><span id="font">게시판</span><i
+					class="bi bi-chevron-down ms-auto"></i>
+			</a>
+			
+			<ul id="tables-nav" class="nav-content collapse "
+					data-bs-parent="#sidebar-nav">
+					<li><a href="/board/list-posting"> <i class="bi bi-circle"></i><span>전체</span>
+					</a></li>
+			</ul>
+			
+			<c:forEach var="board" items="${boardDTO.list}" varStatus="status">
+				<ul id="tables-nav" class="nav-content collapse "
+					data-bs-parent="#sidebar-nav">
+					<li><a href="/board/list-posting?bno=${board.board_number }"> <i class="bi bi-circle"></i><span>${board.board_name}</span>
+					</a></li>
+				</ul>
+			</c:forEach>
+			
+			</li>
     </ul>
   </aside><!-- End Sidebar-->
   
@@ -293,61 +303,37 @@ h1 {
 						<a href="javascript:goDelete(${posting.posting_number });" class="btn btn-lg btn-outline-success" id="singleDelete">삭제</a>
 					</div>
 					<div style="margin-top: 15%;">
-						<span>댓글</span> <span style="margin-left: 1px; color: #157efb">1</span>
+						<span>댓글</span> <span style="margin-left: 1px; color: #157efb" id="comment-count">0</span>
 
 					</div>
+					<form action="/board/delete-posting" method="post" id="delete-posting-form">
+						<input type="hidden" name="pno" value="${posting.posting_number }">
+					</form>
 					
 				</div>
 			</div>
 
 			<!-- reply -->
 			<div id="replybox">
-			 <div class="d-flex">
-                   <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                   <div class="ms-3">
-                       <div class="fw-bold">이민석</div>
-                         <p>그래 안녕안녕</p>
-                   </div>
-                   <div id="buttonList" class="ms-3">
-						<button type="button" class="btn btn-outline-success" style="border: 0; outline: 0; position: absolute; margin-left: 65%;">수정</button>
-						<button type="button" class="btn btn-outline-success" style="border: 0; outline: 0; position: absolute; margin-left: 70%;">삭제</button>
-					</div>
-             </div>
-					<div>
-						<button id="reply" type="button" class="btn btn-outline-success" style="margin-top: 1%; margin-left: 5%;">답글</button>
-					</div>
-					<div class="row" style="margin-left: 2%; display: none;" id="replyForm">
-						<div class="col-sm-8 forum-item" >
-										<!-- Comment form-->
-							<form class="mb-4">
-								<textarea class="form-control" 
-								placeholder="댓글을 입력하세요. (@로 멤버를 멘션할 수 있어요!)" style="height: 200px; width: 900px;"></textarea>
-								<span style="margin-left: 73%;">
-								<button type="button" class="btn btn-lg btn-outline-success">취소</button>
-								<button type="button" class="btn btn-lg btn-outline-success">입력</button>
-								</span>
-
-							</form>
-						</div>
-					</div>
+			
 			</div>
 			
 			<div class="row" id="replyForm">
 				<div class="col-sm-10 forum-item">
 					<!-- Comment form-->
 					<form class="mb-4">
-						<textarea class="form-control" rows="3"
-							placeholder="댓글을 입력하세요. (@로 멤버를 멘션할 수 있어요!)" style="height: 200px;"></textarea>
+						<textarea class="form-control" rows="3"  id="comment_contents"
+							placeholder="댓글을 입력하세요. (@로 멤버를 멘션할 수 있어요!)" style="height: 200px; "></textarea>
 					</form>
 				</div>
 				<div class="col-sm-2" style="margin-top: 6%;">
-					<button type="button" class="btn btn-lg btn-outline-success">입력</button>
+					<button id="insert-comment" type="button" class="btn btn-lg btn-outline-success" >입력</button>
 				</div>
 			</div>
 		</div>
 
   <form name="paging">
-    	<input type="hidden" name="pno"/>
+    	<input type="hidden" />
     </form>
 
 
@@ -366,7 +352,6 @@ h1 {
 
 
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.13/dist/sweetalert2.all.min.js"></script>
 	<!-- Vendor JS Files -->
@@ -378,6 +363,23 @@ h1 {
 	<!-- Template Main JS File -->
 	<script src="/resources/board/posting/js/main.js"></script>
 	<script type="text/javascript" src="/resources/board/posting/js/b_posting.js"></script>
+	<script type="text/javascript" src="/resources/board/posting/js/b_comment.js"></script>
+<script type="text/javascript">
+$(function(){
+        var posting_number  =  '<c:out value="${posting.posting_number}"/>';
+
+        listComment(posting_number);
+	
+	
+    $("#insert-comment").click(function(){
+        var comment_contents = $("#comment_contents").val();
+
+        insertComment(posting_number, comment_contents);
+        
+	});
+});
+	
+</script>
 
 
 </body>

@@ -1,4 +1,5 @@
-package com.coworks.board.service;
+package com.coworks.service.board;
+
 
 import java.util.List;
 
@@ -7,7 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.coworks.board.domain.PostingVO;
+import com.coworks.domain.board.Criteria;
+import com.coworks.domain.board.PostingVO;
 import com.coworks.mapper.BoardMapper;
 
 import lombok.Setter;
@@ -23,8 +25,8 @@ public class PostingServiceImpl implements PostingService {
 	private BoardMapper boardMapper;
 
 	@Override
-	public List<PostingVO> listPostingService() {
-		return boardMapper.selectPostingList();
+	public List<PostingVO> listPostingService(Criteria cri) {
+		return boardMapper.selectPostingList(cri);
 	}
 
 	@Override
@@ -60,6 +62,10 @@ public class PostingServiceImpl implements PostingService {
 		String[] list = request.getParameterValues("chk_posting");
 		int countDeleted = 0;
 		
+		if(list.length == 0) {
+			return -1;
+		}
+		
 		for(String e : list ) {
 			
 			int isDeleted = boardMapper.deletePosting(Long.parseLong(e));
@@ -70,6 +76,11 @@ public class PostingServiceImpl implements PostingService {
 		}
 		
 		return countDeleted;
+	}
+
+	@Override
+	public int getPostingCount(Criteria cri) {
+		return boardMapper.getTotalPostingCount(cri);
 	}
 
 }

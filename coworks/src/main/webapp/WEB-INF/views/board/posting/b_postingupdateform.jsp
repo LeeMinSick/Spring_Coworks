@@ -82,43 +82,7 @@
 	}
   </style>
   
-  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" src="/resources/board/posting/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
-  <script type="text/javascript">
-  let oEditors = []
   
-  $(function(){
-      nhn.husky.EZCreator.createInIFrame({
-          oAppRef: oEditors,
-          elPlaceHolder: "editorTxt", //textarea에서 지정한 id와 일치해야 합니다. 
-          //SmartEditor2Skin.html 파일이 존재하는 경로
-          sSkinURI: "/resources/board/posting/smarteditor2/SmartEditor2Skin.html",  
-          htParams : {
-              // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
-              bUseToolbar : true,             
-              // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
-              bUseVerticalResizer : true,     
-              // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
-              bUseModeChanger : true,         
-              fOnBeforeUnload : function(){
-                   
-              }
-          }, 
-          fOnAppLoad : function(){
-              //기존 저장된 내용의 text 내용을 에디터상에 뿌려주고자 할때 사용
-//               oEditors.getById["editorTxt"].exec("PASTE_HTML", ["기존 DB에 저장된 내용을 에디터에 적용할 문구"]);
-          },
-          fCreator: "createSEditor2"
-      });
-      
-      //저장버튼 클릭시 form 전송
-      $("#save").click(function(){
-          oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", []);
-          $("#frm").submit();
-      });    
-});
-  
-  </script>
   
   
 </head>
@@ -287,18 +251,27 @@
         </ul>
       </li> <!--  End Forms Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span id="font">자유게시판</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/board/list-posting">
-              <i class="bi bi-circle"></i><span>게시판1</span>
-            </a>
-          </li>
-        </ul>
-      </li> <!--  End Tables Nav -->
+      <li class="nav-item"><a class="nav-link collapsed"
+				data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+					<i class="bi bi-layout-text-window-reverse"></i><span id="font">게시판</span><i
+					class="bi bi-chevron-down ms-auto"></i>
+			</a>
+			
+			<ul id="tables-nav" class="nav-content collapse "
+					data-bs-parent="#sidebar-nav">
+					<li><a href="/board/list-posting"> <i class="bi bi-circle"></i><span>전체</span>
+					</a></li>
+			</ul>
+			
+			<c:forEach var="board" items="${boardDTO.list}" varStatus="status">
+				<ul id="tables-nav" class="nav-content collapse "
+					data-bs-parent="#sidebar-nav">
+					<li><a href="/board/list-posting?bno=${board.board_number }"> <i class="bi bi-circle"></i><span>${board.board_name}</span>
+					</a></li>
+				</ul>
+			</c:forEach>
+			
+			</li>
     </ul>
   </aside><!-- End Sidebar-->
   
@@ -325,15 +298,8 @@
             <div class="card-body">
 
               <!-- General Form Elements -->
-              <form action="/board/update-posting" id="frm" method="post">
+              <form action="/board/update-posting" id="update-posting" method="post">
               	<input type="hidden" name="posting_number" value="${posting.posting_number }">
-              	<div class="row mb-3">
-              		 <label for="inputText" class="col-sm-2 col-form-label" id="font">게시판</label>
-              		<div class="col-sm-5">
-              		<button type="button" class="btn btn-success">게시판 선택</button>
-              		</div>
-              	</div>
-              
               
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label" id="font">제목</label>
@@ -389,12 +355,9 @@
                
 
                
-
-               
-
                 <div class="row mb-3">
 <!--                     <button type="submit" class="btn btn-success" style="right: 0%">등록</button> -->
-                    <input type="button" class="btn btn-success" style="right: 0%" value="수정완료" id="save">
+                    <input type="button" class="btn btn-success" style="right: 0%" value="수정완료" id="update-posting-btn">
                 </div>
 
               </form><!-- End General Form Elements -->
@@ -419,7 +382,12 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
 
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="/resources/board/posting/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/resources/board/posting/js/b_editor.js"></script>
   <!-- Template Main JS File -->
   <script src="/resources/board/posting/js/main.js"></script>
+  <script type="text/javascript" src="/resources/board/posting/js/b_posting.js"></script>
+  
 </body>
 </html>

@@ -34,7 +34,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<mybatis-spring:scan base-package="com.coworks.mapper"/>
-	<context:component-scan base-package="com.coworks.board.domain"></context:component-scan>
-	<context:component-scan base-package="com.coworks.board.service"></context:component-scan>
+	<context:component-scan base-package="com.coworks.domain"/>
+	<context:component-scan base-package="com.coworks.service"/>
 	
 </beans>

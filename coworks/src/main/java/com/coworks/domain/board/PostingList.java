@@ -1,4 +1,5 @@
-package com.coworks.board.domain;
+package com.coworks.domain.board;
+
 
 
 import java.io.Serializable;

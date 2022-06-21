@@ -22,7 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.coworks.controller" />
-	<context:component-scan base-package="com.coworks.board.exception"/>
+	<context:component-scan base-package="com.coworks.exception"/>
 	
 	
 	

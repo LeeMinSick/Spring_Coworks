@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.coworks.board.domain.PostingVO;
-import com.coworks.board.service.PostingService;
+import com.coworks.domain.board.PostingVO;
+import com.coworks.service.board.PostingService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -20,21 +20,28 @@ public class PostingServiceTests {
 	@Setter(onMethod_ = {@Autowired})
 	private PostingService service;
 	
-//	@Test
-//	public void testInsertPosting() {
-//		PostingVO posting = new PostingVO();
-//		posting.setPosting_title("안녕하세요");
-//		posting.setPosting_contents("안녕");
-//		posting.setPosting_writer("홍길동");
-//	
-//		service.insertPostingService(posting);
-//		
-//		log.info(posting.getPosting_number());
-//	}
+	@Test
+	public void testInsertPosting() {
+		PostingVO posting = new PostingVO();
+		posting.setBoard_number(21L);
+		posting.setPosting_title("안녕하세요");
+		posting.setPosting_contents("안녕");
+		posting.setPosting_writer("홍길동");
+	
+		service.insertPostingService(posting);
+		
+		log.info(posting.getPosting_number());
+	}
 	
 //	@Test
 //	public void testListPosting() {
-//		service.listPostingService().forEach(posting -> log.info(posting));
+//		Criteria cri = new Criteria();
+//		cri.setPageNum(3);
+//		cri.setAmount(10);
+//		cri.setType("T");
+//		cri.setKeyword("ww");
+//		
+//		service.listPostingService(cri).forEach(posting -> log.info(posting));
 //	}
 	
 //	@Test
@@ -67,6 +74,17 @@ public class PostingServiceTests {
 //		int count = service.deletePostingListService();
 //		
 //		log.info("총삭제행수 : " + count);
+//	}
+	
+//	@Test
+//	public void testPostingCount() {
+//			Criteria cri = new Criteria();
+//			cri.setType("T");
+//			cri.setKeyword("ww");
+//		
+//		int count = service.getPostingCount(cri);
+//		
+//		log.info("총 게시글 수 : " + count);
 //	}
 	
 	

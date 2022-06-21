@@ -2,24 +2,30 @@ package com.coworks.mapper;
 
 import java.util.List;
 
+import com.coworks.domain.board.CommentVO;
+import com.coworks.domain.board.Criteria;
+import com.coworks.domain.board.PostingVO;
 
-import com.coworks.board.domain.Comm;
-import com.coworks.board.domain.Criteria;
-import com.coworks.board.domain.PostingVO;
 
 
 public interface BoardMapper {
 	public String getTime();
 	
-	
-	List<PostingVO> selectPostingList();
+	//게시글
+	List<PostingVO> selectPostingList(Criteria criteria);
 	int insertPosting(PostingVO postingVO);
 	int insertPostingWithKey(PostingVO postingVO);
-//	int countPosting(Criteria criteria);
 	PostingVO detailPosting(long seq);
 	int deletePosting(long seq);
 	int updatePosting(PostingVO postingVO);
-//	
-//	int insertComment(Comm comment);
-//	List<Comm> selectCommentList(long seq);
+	int getTotalPostingCount(Criteria criteria);
+	
+	
+	//댓글
+	int insertComment(CommentVO commentVO);
+	CommentVO getComment(Long posting_numeber);
+	int deleteComment(Long posting_numeber);
+	int updateComment(CommentVO commentVO);
+	List<CommentVO> selectCommentList(Long posting_number);
+	int getCommentCountByPosting(Long posting_numeber);
 }

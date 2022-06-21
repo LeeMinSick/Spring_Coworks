@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -216,18 +219,27 @@
         </ul>
       </li> <!--  End Forms Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span id="font">자유게시판</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/board/list-posting">
-              <i class="bi bi-circle"></i><span>게시판1</span>
-            </a>
-          </li>
-        </ul>
-      </li> <!--  End Tables Nav -->
+   <li class="nav-item"><a class="nav-link collapsed"
+				data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+					<i class="bi bi-layout-text-window-reverse"></i><span id="font">게시판</span><i
+					class="bi bi-chevron-down ms-auto"></i>
+			</a>
+			
+			<ul id="tables-nav" class="nav-content collapse "
+					data-bs-parent="#sidebar-nav">
+					<li><a href="/board/list-posting"> <i class="bi bi-circle"></i><span>전체</span>
+					</a></li>
+			</ul>
+			
+			<c:forEach var="board" items="${boardDTO.list}" varStatus="status">
+				<ul id="tables-nav" class="nav-content collapse "
+					data-bs-parent="#sidebar-nav">
+					<li><a href="/board/list-posting?bno=${board.board_number }"> <i class="bi bi-circle"></i><span>${board.board_name}</span>
+					</a></li>
+				</ul>
+			</c:forEach>
+			
+			</li>
     </ul>
   </aside><!-- End Sidebar-->
   

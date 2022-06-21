@@ -33,7 +33,9 @@ public class PostingControllerTests {
 	
 //	@Test
 //	public void testListPosting() throws Exception {
-//		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list-posting"))
+//		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list-posting")
+//				.param("pageNum", "3")
+//				.param("amount", "20"))
 //				.andReturn()
 //				.getModelAndView()
 //				.getModelMap());
@@ -75,14 +77,14 @@ public class PostingControllerTests {
 //				
 //	}
 	
-	@Test
-	public void testDeletePosting() throws Exception {
-		String resultPage = mockMvc.perform(MockMvcRequestBuilders.delete("/board/posting")
-							.param("pno", "116"))
-							.andReturn().getModelAndView().getViewName();
-		
-		log.info(resultPage);
-							
-	}
+//	@Test
+//	public void testDeletePosting() throws Exception {
+//		String resultPage = mockMvc.perform(MockMvcRequestBuilders.delete("/board/posting")
+//							.param("pno", "116"))
+//							.andReturn().getModelAndView().getViewName();
+//		
+//		log.info(resultPage);
+//							
+//	}
 	
 }
