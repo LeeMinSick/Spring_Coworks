@@ -3,8 +3,6 @@ package com.coworks.domain.board;
 
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.ToString;
 
 @Data
 public class PageDTO {
