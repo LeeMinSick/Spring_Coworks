@@ -7,7 +7,7 @@
 <mapper namespace="com.coworks.mapper.AdministrationMapper">
 
 	<insert id="insertBoard"
-		parameterType="com.coworks.administration.domain.BoardVO">
+		parameterType="com.coworks.domain.administration.BoardVO">
 		insert into board(board_number, board_name, board_description, board_type, board_admin_number)
 		values(board_seq.nextval, #{board_name}, #{board_description}, #{board_type}, #{board_admin_number})
 	</insert>
@@ -23,7 +23,7 @@
 	</insert>-->
 
 	<select id="detailBoard" parameterType="long"
-		resultType="com.coworks.administration.domain.BoardVO">
+		resultType="com.coworks.domain.administration.BoardVO">
 		select * from board where board_number=#{seq}
 	</select>
 
@@ -33,7 +33,7 @@
 	</delete>
 
 	<update id="updateBoard"
-		parameterType="com.coworks.administration.domain.BoardVO">
+		parameterType="com.coworks.domain.administration.BoardVO">
 		update board set board_name = #{board_name},
 		board_description = #{board_description}
 		where board_number =
@@ -42,7 +42,7 @@
 
 
 	<select id="selectBoardList"
-		resultType="com.coworks.administration.domain.BoardVO">
+		resultType="com.coworks.domain.administration.BoardVO">
 
 		select /*+INDEX(board board_number) */ board_number, board_name, board_description, board_type, board_admin_number
 			from board

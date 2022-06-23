@@ -31,28 +31,28 @@ public class PostingControllerTests {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 	
-//	@Test
-//	public void testListPosting() throws Exception {
-//		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list-posting")
-//				.param("pageNum", "3")
-//				.param("amount", "20"))
-//				.andReturn()
-//				.getModelAndView()
-//				.getModelMap());
-//	}
+	@Test
+	public void testListPosting() throws Exception {
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list-posting")
+				.param("pageNum", "3")
+				.param("amount", "20"))
+				.andReturn()
+				.getModelAndView()
+				.getModelMap());
+	}
 	
-//	@Test
-//	public void testInsertPosting() throws Exception {
-//			
-//		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/posting")
-//				.param("posting_title", "안녕")
-//				.param("posting_contents", "안녕하세요"))
-//				.andReturn()
-//				.getModelAndView()
-//				.getViewName();
-//		
-//		log.info(resultPage);
-//	}
+	@Test
+	public void testInsertPosting() throws Exception {
+			
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/posting")
+				.param("posting_title", "안녕")
+				.param("posting_contents", "안녕하세요"))
+				.andReturn()
+				.getModelAndView()
+				.getViewName();
+		
+		log.info(resultPage);
+	}
 	
 //	@Test
 //	public void testDetailPosting() throws Exception {

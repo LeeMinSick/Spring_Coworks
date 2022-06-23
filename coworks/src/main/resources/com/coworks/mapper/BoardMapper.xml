@@ -63,7 +63,7 @@
 
 
 	<insert id="insertPosting"
-		parameterType="com.coworks.board.domain.PostingVO">
+		parameterType="com.coworks.domain.board.PostingVO">
 		insert into posting(posting_number, posting_title,
 		posting_contents,
 		posting_hitpoint, posting_writer,
@@ -96,7 +96,7 @@
 	</insert>
 
 	<select id="detailPosting" parameterType="long"
-		resultType="com.coworks.board.domain.PostingVO">
+		resultType="com.coworks.domain.board.PostingVO">
 		select * from posting where posting_number=#{seq}
 	</select>
 
@@ -106,7 +106,7 @@
 	</delete>
 
 	<update id="updatePosting"
-		parameterType="com.coworks.board.domain.PostingVO">
+		parameterType="com.coworks.domain.board.PostingVO">
 		update posting set posting_title = #{posting_title},
 		posting_contents = #{posting_contents}
 		where posting_number =
@@ -115,7 +115,7 @@
 
 
 	<select id="selectPostingList" 
-		resultType="com.coworks.board.domain.PostingVO">
+		resultType="com.coworks.domain.board.PostingVO">
   <![CDATA[
   select 
     posting_number, posting_title, posting_contents, posting_writer, posting_date_of_registration, board_number
@@ -157,7 +157,7 @@
 
 	</insert>
 
-	<select id="getComment" resultType="com.coworks.board.domain.CommentVO">
+	<select id="getComment" resultType="com.coworks.domain.board.CommentVO">
 
 		select * from Comm 
 			where comment_number = #{comment_number}
@@ -180,7 +180,7 @@
 	</update>
 
 	<select id="selectCommentList"
-		resultType="com.coworks.board.domain.CommentVO">
+		resultType="com.coworks.domain.board.CommentVO">
 
 		select /*+INDEX(Comm comment_number) */ comment_number, posting_number, comment_contents, comment_name, comment_date_of_registration
 			from Comm

@@ -21,11 +21,8 @@ public class BoardMapperTests {
 	
 	@Test
 	public void testMapper() {
-		System.out.println("ddddddddddddddddddddddddddddddddddddddddddd");
 		
 		log.info(mapper.getClass().getName());
-		System.out.println("ssssssssssssssssssssssssssssssssssssssssssss");
 		log.info(mapper.getTime());
-		System.out.println("ffffffffffffffffffffffffffffffffffffffffffff");
 	}
 }

@@ -1,9 +1,14 @@
 package com.coworks.mapper;
 
+import java.util.stream.IntStream;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.coworks.domain.board.CommentVO;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -20,25 +25,25 @@ public class CommentMapperTests {
 	private BoardMapper mapper;
 	
 	
-//	@Test
-//	public void testInsertComment() {
-//		IntStream.range(1, 5).forEach(i -> {
-//			CommentVO vo = new CommentVO();
-//			
-//			vo.setPosting_number(pnoArr[i]);
-//			vo.setComment_contents("댓글 테스트 : " + i);
-//			vo.setComment_name("replyer : " + i);
-//			
-//			mapper.insertComment(vo);
-//		});
-//	}
+	@Test
+	public void testInsertComment() {
+		IntStream.range(1, 5).forEach(i -> {
+			CommentVO vo = new CommentVO();
+			
+			vo.setPosting_number(pnoArr[i]);
+			vo.setComment_contents("댓글 테스트 : " + i);
+			vo.setComment_name("replyer : " + i);
+			
+			mapper.insertComment(vo);
+		});
+	}
 	
-//	@Test
-//	public void testDetailComment() {
-//		Long targetPno = 60L;
-//		CommentVO vo = mapper.getComment(targetPno);
-//		log.info(vo);
-//	}
+	@Test
+	public void testDetailComment() {
+		Long targetPno = 60L;
+		CommentVO vo = mapper.getComment(targetPno);
+		log.info(vo);
+	}
 	
 //	@Test
 //	public void testDeleteComment() {

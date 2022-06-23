@@ -1,6 +1,6 @@
 package com.coworks.mapper;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.coworks.domain.board.Criteria;
+import com.coworks.domain.board.PostingVO;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -33,20 +34,20 @@ public class PostingMapperTests {
 	
 	
 	
-//	@Test
-//	public void testInsertPosting() {
-//	
-//			
-//		
-//		PostingVO posting = new PostingVO();
-//		posting.setPosting_title("sssss");
-//		posting.setPosting_contents("ddddd");
-//		posting.setPosting_writer("fffff");
-//		
-//		log.info(posting);
-//		
-//		mapper.insertPosting(posting);
-//	}
+	@Test
+	public void testInsertPosting() {
+	
+			
+		
+		PostingVO posting = new PostingVO();
+		posting.setPosting_title("sssss");
+		posting.setPosting_contents("ddddd");
+		posting.setPosting_writer("fffff");
+		
+		log.info(posting);
+		
+		mapper.insertPosting(posting);
+	}
 	
 	
 	

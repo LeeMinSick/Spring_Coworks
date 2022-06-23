@@ -1,11 +1,14 @@
 package com.coworks.service;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.coworks.domain.board.Criteria;
 import com.coworks.domain.board.PostingVO;
 import com.coworks.service.board.PostingService;
 
@@ -33,21 +36,21 @@ public class PostingServiceTests {
 		log.info(posting.getPosting_number());
 	}
 	
-//	@Test
-//	public void testListPosting() {
-//		Criteria cri = new Criteria();
-//		cri.setPageNum(3);
-//		cri.setAmount(10);
-//		cri.setType("T");
-//		cri.setKeyword("ww");
-//		
-//		service.listPostingService(cri).forEach(posting -> log.info(posting));
-//	}
+	@Test
+	public void testListPosting() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(3);
+		cri.setAmount(10);
+		cri.setType("T");
+		cri.setKeyword("ww");
+		
+		service.listPostingService(cri).forEach(posting -> log.info(posting));
+	}
 	
-//	@Test
-//	public void testDetailPosting() {
-//		log.info(service.detailPostingService(70L));
-//	}
+	@Test
+	public void testDetailPosting() {
+		log.info(service.detailPostingService(70L));
+	}
 	
 //	@Test
 //	public void testDeletePosting() {
@@ -55,7 +58,7 @@ public class PostingServiceTests {
 //		
 //		service.listPostingService().forEach(posting -> log.info(posting));
 //	}
-	
+//	
 //	@Test
 //	public void testUpdatePosting() {
 //		
@@ -68,7 +71,7 @@ public class PostingServiceTests {
 //		
 //		service.listPostingService().forEach(posting2 -> log.info(posting2));
 //	}
-	
+//	
 //	@Test
 //	public void testAllDeletePosting() {
 //		int count = service.deletePostingListService();
@@ -76,16 +79,16 @@ public class PostingServiceTests {
 //		log.info("총삭제행수 : " + count);
 //	}
 	
-//	@Test
-//	public void testPostingCount() {
-//			Criteria cri = new Criteria();
-//			cri.setType("T");
-//			cri.setKeyword("ww");
-//		
-//		int count = service.getPostingCount(cri);
-//		
-//		log.info("총 게시글 수 : " + count);
-//	}
+	@Test
+	public void testPostingCount() {
+			Criteria cri = new Criteria();
+			cri.setType("T");
+			cri.setKeyword("ww");
+		
+		int count = service.getPostingCount(cri);
+		
+		log.info("총 게시글 수 : " + count);
+	}
 	
 	
 	
