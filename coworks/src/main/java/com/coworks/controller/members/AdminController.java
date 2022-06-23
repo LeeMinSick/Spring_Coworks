@@ -1,9 +1,9 @@
-package com.coworks.controller;
+package com.coworks.controller.members;
 
-import com.coworks.domain.DepartmentVO;
-import com.coworks.domain.LevelVO;
-import com.coworks.domain.MemberVO;
-import com.coworks.service.MemberService;
+import com.coworks.domain.members.DepartmentVO;
+import com.coworks.domain.members.LevelVO;
+import com.coworks.domain.members.MemberVO;
+import com.coworks.service.members.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,6 @@ import org.springframework.web.servlet.HandlerMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

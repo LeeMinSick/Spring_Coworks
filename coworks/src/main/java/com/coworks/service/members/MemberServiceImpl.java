@@ -1,9 +1,9 @@
-package com.coworks.service;
+package com.coworks.service.members;
 
-import com.coworks.domain.DepartmentVO;
-import com.coworks.domain.LevelVO;
-import com.coworks.domain.MemberVO;
-import com.coworks.mapper.MemberMapper;
+import com.coworks.domain.members.DepartmentVO;
+import com.coworks.domain.members.LevelVO;
+import com.coworks.domain.members.MemberVO;
+import com.coworks.mapper.members.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

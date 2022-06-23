@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.coworks.mapper.MemberMapper">
-    <resultMap type="com.coworks.domain.MemberVO" id="MemberMap">
+<mapper namespace="com.coworks.mapper.members.MemberMapper">
+    <resultMap type="com.coworks.domain.members.MemberVO" id="MemberMap">
         <id property="membershipNumber" column="Membership_number"/>
         <result property="name" column="Name"/>
         <result property="id" column="Id"/>
@@ -21,7 +21,7 @@
         <result property="departmentNumber" column="Department_number"/>
     </resultMap>
 
-    <resultMap type="com.coworks.domain.DepartmentVO" id="DepartmentMap">
+    <resultMap type="com.coworks.domain.members.DepartmentVO" id="DepartmentMap">
         <id property="departmentNumber" column="Department_number"/>
         <result property="departmentName" column="Department_name"/>
         <result property="parentDepNum" column="Parent_dep_num"/>
@@ -29,7 +29,7 @@
     </resultMap>
 
 
-    <resultMap type="com.coworks.domain.LevelVO" id="LevelMap">
+    <resultMap type="com.coworks.domain.members.LevelVO" id="LevelMap">
         <id property="levelId" column="Level_id"/>
         <result property="position" column="Position"/>
         <result property="rank" column="Rank"/>
@@ -68,7 +68,7 @@
         from "Department"
     </select>
 
-    <insert id="insertDepartment" parameterType="com.coworks.domain.DepartmentVO">
+    <insert id="insertDepartment" parameterType="com.coworks.domain.members.DepartmentVO">
         insert into "Department"
         ("Department_number",
          "Department_name",
@@ -80,7 +80,7 @@
                 #{departmentMaster})
     </insert>
 
-    <delete id="deleteDepartment" parameterType="com.coworks.domain.DepartmentVO">
+    <delete id="deleteDepartment" parameterType="com.coworks.domain.members.DepartmentVO">
         delete
         from "Department"
         where "Department_number" = #{departmentNumber}
@@ -93,7 +93,7 @@
         order by "Level_id" asc
     </select>
 
-    <update id="updateLevelList" parameterType="com.coworks.domain.LevelVO">
+    <update id="updateLevelList" parameterType="com.coworks.domain.members.LevelVO">
         update "level"
         set
         <choose>
@@ -124,7 +124,7 @@
              )
     </select>
 
-    <insert id="addLevelList" parameterType="com.coworks.domain.LevelVO">
+    <insert id="addLevelList" parameterType="com.coworks.domain.members.LevelVO">
         insert into "level" (
         <if test="position != null">
             "Position"

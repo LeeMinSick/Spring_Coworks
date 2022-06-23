@@ -1,4 +1,4 @@
-package com.coworks.domain;
+package com.coworks.domain.members;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

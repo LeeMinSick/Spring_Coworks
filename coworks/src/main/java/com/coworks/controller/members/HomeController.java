@@ -1,4 +1,4 @@
-package com.coworks.controller;
+package com.coworks.controller.members;
 
 import java.text.DateFormat;
 import java.util.Date;

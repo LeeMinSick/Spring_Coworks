@@ -1,4 +1,4 @@
-package com.coworks.domain;
+package com.coworks.domain.members;
 
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;

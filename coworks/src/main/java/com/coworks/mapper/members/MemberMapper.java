@@ -1,8 +1,8 @@
-package com.coworks.mapper;
+package com.coworks.mapper.members;
 
-import com.coworks.domain.DepartmentVO;
-import com.coworks.domain.LevelVO;
-import com.coworks.domain.MemberVO;
+import com.coworks.domain.members.DepartmentVO;
+import com.coworks.domain.members.LevelVO;
+import com.coworks.domain.members.MemberVO;
 
 import java.util.ArrayList;
 
