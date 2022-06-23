@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.coworks.mapper.members.MemberMapper">
+    <resultMap type="com.coworks.domain.members.MemberVO" id="MemberMap">
+        <id property="membershipNumber" column="Membership_number"/>
+        <result property="name" column="Name"/>
+        <result property="id" column="Id"/>
+        <result property="password" column="Password"/>
+        <result property="location" column="Location"/>
+        <result property="position" column="Position"/>
+        <result property="rank" column="Rank"/>
+        <result property="employmentType" column="Employment_type"/>
+        <result property="status" column="Status"/>
+        <result property="email" column="Email"/>
+        <result property="cellNum" column="Cell_num"/>
+        <result property="birthDate" column="Birthdate"/>
+        <result property="dateOfEntry" column="Date_of_entry"/>
+        <result property="annualDate" column="Annual_date"/>
+        <result property="departmentNumber" column="Department_number"/>
+    </resultMap>
+
+    <resultMap type="com.coworks.domain.members.DepartmentVO" id="DepartmentMap">
+        <id property="departmentNumber" column="Department_number"/>
+        <result property="departmentName" column="Department_name"/>
+        <result property="parentDepNum" column="Parent_dep_num"/>
+        <result property="departmentMaster" column="Department_master"/>
+    </resultMap>
+
+
+    <resultMap type="com.coworks.domain.members.LevelVO" id="LevelMap">
+        <id property="levelId" column="Level_id"/>
+        <result property="position" column="Position"/>
+        <result property="rank" column="Rank"/>
+        <result property="employmentType" column="Employment_type"/>
+    </resultMap>
+
+    <!--TO_DATE(#{start}, 'YYYY-MM-DD HH24:MI:SS'    -->
+    <select id="getMemberInfo" resultMap="MemberMap">
+        select "Membership_number",
+               "Name",
+               "Id",
+               "Password",
+               "Location",
+               "Position",
+               "Rank",
+               "Status",
+               "Email",
+               "Cell_num",
+               to_char("Birthdate", 'yyyy-mm-dd')     as "Birthdate",
+               to_char("Date_of_entry", 'yyyy-mm-dd') as "Date_of_entry",
+               "Annual_date",
+               "Department_number",
+               "Employment_type"
+        from "Users"
+        where "Membership_number" = #{membershipNumber}
+    </select>
+
+    <select id="getMemberList" resultMap="MemberMap">
+        select *
+        from "Users"
+    </select>
+
+
+    <select id="getDepartmentList" resultMap="DepartmentMap">
+        select *
+        from "Department"
+    </select>
+
+    <insert id="insertDepartment" parameterType="com.coworks.domain.members.DepartmentVO">
+        insert into "Department"
+        ("Department_number",
+         "Department_name",
+         "Parent_dep_num",
+         "Department_master")
+        values (department_seq.nextval,
+                #{departmentName},
+                #{parentDepNum},
+                #{departmentMaster})
+    </insert>
+
+    <delete id="deleteDepartment" parameterType="com.coworks.domain.members.DepartmentVO">
+        delete
+        from "Department"
+        where "Department_number" = #{departmentNumber}
+    </delete>
+
+
+    <select id="getLevelList" resultMap="LevelMap">
+        select *
+        from "level"
+        order by "Level_id" asc
+    </select>
+
+    <update id="updateLevelList" parameterType="com.coworks.domain.members.LevelVO">
+        update "level"
+        set
+        <choose>
+            <when test="position != null">
+                "Position"=#{position}
+            </when>
+            <when test="rank != null">
+                "Rank"=#{rank}
+            </when>
+            <when test="employmentType != null">
+                "Employment_type"=#{employmentType}
+            </when>
+        </choose>
+        where "Level_id"=#{levelId}
+    </update>
+
+    <select id="getLevelSize" resultType="int">
+        select count(*)
+        from "level"
+    </select>
+
+    <select id="checkLevelId" resultType="int">
+        select nvl(count, 0)
+        from (
+                 select count(*) as count
+                 from "level"
+                 where "Level_id" = #{levelId}
+             )
+    </select>
+
+    <insert id="addLevelList" parameterType="com.coworks.domain.members.LevelVO">
+        insert into "level" (
+        <if test="position != null">
+            "Position"
+        </if>
+        <if test="rank != null">
+            "Rank"
+        </if>
+        <if test="employmentType != null">
+            "Employment_type"
+        </if>
+        , "Level_id")
+        values (
+        <if test="position != null">
+            #{position}
+        </if>
+        <if test="rank != null">
+            #{rank}
+        </if>
+        <if test="employmentType != null">
+            #{employmentType}
+        </if>
+        , #{levelId})
+    </insert>
+
+    <delete id="deleteLevelList">
+        delete
+        from "level"
+        where "Level_id" = #{levelId}
+    </delete>
+</mapper>

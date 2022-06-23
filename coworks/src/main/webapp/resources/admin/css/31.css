@@ -1,0 +1,4136 @@
+@charset "UTF-8";
+.config_area .config_box input[type=checkbox], .config_area .list_check .check_box input[type=checkbox], .config_area .list_check .check_box input[type=radio], .config_area .list_template input[type=radio], .config_layer .list_config input[type=radio], .ly_manager .setting .set_checkbox, .ly_mid_step .set_radio {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden
+}
+
+.ly_config_alert em, .ly_config_wrapper em {
+    font-style: normal
+}
+
+.ly_config_alert button:disabled, .ly_config_alert button[disabled], .ly_config_wrapper button:disabled, .ly_config_wrapper button[disabled] {
+    opacity: 1
+}
+
+.ly_config_alert img {
+    vertical-align: middle
+}
+
+.ly_config_table_wrapper button, .ly_config_wrapper button {
+    border: 0;
+    border-radius: 0;
+    background: transparent
+}
+
+.ly_config_wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+    background-color: rgba(0, 0, 0, .35);
+    text-align: center;
+    white-space: nowrap
+}
+
+.ko_KR .ly_config_wrapper {
+    font-family: Apple SD Gothic Neo, 나눔 고딕, NanumGothic, 돋움, Dotum, sans-serif
+}
+
+@media (max-width: 840px) {
+    .ly_config_wrapper {
+        height: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        white-space: normal
+    }
+}
+
+.ly_config_wrapper:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle
+}
+
+@media (max-width: 840px) {
+    .ly_config_wrapper:before {
+        display: none
+    }
+}
+
+.ko_KR .ly_config_wrapper button, .ko_KR .ly_config_wrapper input, .ko_KR .ly_config_wrapper select, .ko_KR .ly_config_wrapper textarea {
+    font-family: Apple SD Gothic Neo, 나눔 고딕, NanumGothic, 돋움, Dotum, sans-serif
+}
+
+.ly_config {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    white-space: normal;
+    max-height: 100%;
+    overflow: auto;
+    width: 800px;
+    border-radius: 6px;
+    -webkit-box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3)
+}
+
+@media (max-width: 840px) {
+    .ly_config {
+        overflow: auto;
+        display: block;
+        width: auto;
+        height: 100%;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+}
+
+.ly_config_table_wrapper {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150
+}
+
+.ko_KR .ly_config_table_wrapper {
+    font-family: Apple SD Gothic Neo, 나눔 고딕, NanumGothic, 돋움, Dotum, sans-serif
+}
+
+.ly_config_table_wrapper.m_type {
+    overflow-x: hidden
+}
+
+.ly_config_table_wrapper.m_type col.title {
+    width: 200px
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_head {
+    padding: 40px 30px 30px
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_content {
+    padding: 30px 0 40px
+}
+
+.ly_config_table_wrapper.m_type .comparison_information {
+    position: relative;
+    padding-top: 60px;
+    white-space: nowrap
+}
+
+.ly_config_table_wrapper.m_type .slick-slide {
+    display: inline-block;
+    padding: 0 7px;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.ly_config_table_wrapper.m_type .slick-slide .inner {
+    border: 1px solid #e7e7eb;
+    background-color: #f9f9fb
+}
+
+.ly_config_table_wrapper.m_type .slick-slide.slick-current .inner {
+    border-width: 4px;
+    border-color: #07b53b;
+    background-color: #fff
+}
+
+@media screen and (max-width: 767px) {
+    .ly_config_table_wrapper.m_type .slick-slide.slick-current .inner {
+        position: relative
+    }
+}
+
+.ly_config_table_wrapper.m_type .slick-slide.slick-current tbody .row:last-child .cell {
+    padding-bottom: 17px
+}
+
+.ly_config_table_wrapper.m_type .slick-slide.slick-current .btn_start {
+    background-color: #07b53b;
+    color: #fff
+}
+
+.ly_config_table_wrapper.m_type .slide_pagination {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 30px 22px;
+    white-space: nowrap
+}
+
+.ly_config_table_wrapper.m_type .slide_pagination li {
+    display: inline-block;
+    position: relative;
+    vertical-align: top
+}
+
+.ly_config_table_wrapper.m_type .slide_pagination li ~ li {
+    margin-left: 12px
+}
+
+.ly_config_table_wrapper.m_type .slide_pagination li button {
+    color: #222
+}
+
+.ly_config_table_wrapper.m_type .slide_pagination li.slick-active:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: #07b53b
+}
+
+.ly_config_table_wrapper.m_type .slide_pagination li.slick-active button {
+    color: #07b53b;
+    font-weight: 700
+}
+
+.ly_config_table_wrapper.m_type .slide_pagination button {
+    padding: 0 15px;
+    height: 37px;
+    font-size: 16px
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .comparison_table {
+    white-space: normal
+}
+
+.ja_JP .ly_config_table_wrapper.m_type .comparison_table_wrap .comparison_table {
+    word-break: break-all
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .comparison_table thead .row {
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .comparison_table thead .row .cell {
+    padding: 20px;
+    text-align: center
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .comparison_table thead .row .title {
+    font-weight: 600
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .comparison_table tbody th {
+    padding-left: 20px;
+    text-align: left
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .comparison_table tbody td {
+    padding-right: 20px;
+    text-align: right
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .btn_start {
+    height: 46px
+}
+
+.ly_config_table_wrapper.m_type .comparison_table_wrap .btn_group {
+    padding: 18px 27px 2px
+}
+
+.ly_config_table_wrapper.m_type .ico_false, .ly_config_table_wrapper.m_type .ico_true {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.ly_config_table_wrapper.m_type .ico_false {
+    width: 16px;
+    height: 16px;
+    text-align: center
+}
+
+.ly_config_table_wrapper.m_type .ico_false:before {
+    margin-top: 7px
+}
+
+.ly_config_table_wrapper.pc_type {
+    background-color: rgba(0, 0, 0, .35);
+    text-align: center;
+    white-space: nowrap
+}
+
+@media (max-width: 840px) {
+    .ly_config_table_wrapper.pc_type {
+        height: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+}
+
+.ly_config_table_wrapper.pc_type:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle
+}
+
+@media (max-width: 840px) {
+    .ly_config_table_wrapper.pc_type:before {
+        display: none
+    }
+}
+
+.ly_config_table_wrapper.pc_type .ly_config_table {
+    display: inline-block;
+    width: 800px;
+    -webkit-box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+    vertical-align: middle;
+    text-align: left;
+    white-space: normal
+}
+
+@media (max-width: 840px) {
+    .ly_config_table_wrapper.pc_type .ly_config_table {
+        overflow: auto;
+        min-width: 100%;
+        height: 100%;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+
+    .ly_config_table_wrapper.pc_type .ly_config_table .comparison_table_content, .ly_config_table_wrapper.pc_type .ly_config_table .comparison_table_head {
+        border-radius: 0
+    }
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table_head {
+    padding: 40px 60px 18px;
+    border-radius: 6px 6px 0 0
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table_content {
+    padding: 30px 50px 36px;
+    border-radius: 0 0 6px 6px
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_1 thead .cell:nth-child(2) {
+    border-top: 1px solid #07b53b;
+    background: linear-gradient(180deg, #07b53b 0, #07b53b 3px, #fff 0, #fff);
+    background-origin: border-box
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_1 tbody .row:last-child .cell:nth-child(2) {
+    border-bottom: 1px solid #07b53b;
+    background: linear-gradient(0deg, #07b53b 0, #07b53b 4px, #fff 0, #fff);
+    background-origin: border-box
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_1 .cell:nth-child(2) {
+    border-width: 0 4px;
+    border-color: #07b53b;
+    background: #fff
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_1 .cell:nth-child(2) .btn_start {
+    background: #07b53b;
+    color: #fff
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_2 thead .cell:nth-child(3) {
+    border-top: 1px solid #07b53b;
+    background: linear-gradient(180deg, #07b53b 0, #07b53b 3px, #fff 0, #fff);
+    background-origin: border-box
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_2 tbody .row:last-child .cell:nth-child(3) {
+    border-bottom: 1px solid #07b53b;
+    background: linear-gradient(0deg, #07b53b 0, #07b53b 4px, #fff 0, #fff);
+    background-origin: border-box
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_2 .cell:nth-child(3) {
+    border-width: 0 4px;
+    border-color: #07b53b;
+    background: #fff
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_2 .cell:nth-child(3) .btn_start {
+    background: #07b53b;
+    color: #fff
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_3 thead .cell:nth-child(4) {
+    border-top: 1px solid #07b53b;
+    background: linear-gradient(180deg, #07b53b 0, #07b53b 3px, #fff 0, #fff);
+    background-origin: border-box
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_3 tbody .row:last-child .cell:nth-child(4) {
+    border-bottom: 1px solid #07b53b;
+    background: linear-gradient(0deg, #07b53b 0, #07b53b 4px, #fff 0, #fff);
+    background-origin: border-box
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_3 .cell:nth-child(4) {
+    border-width: 0 4px;
+    border-color: #07b53b;
+    background: #fff
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table.current_3 .cell:nth-child(4) .btn_start {
+    background: #07b53b;
+    color: #fff
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table thead {
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table thead .cell:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, .1)
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table tbody .row:last-child .cell:not(:first-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table tbody .cell:first-child {
+    padding-left: 0;
+    text-align: left
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table tbody .ico_false, .ly_config_table_wrapper.pc_type .comparison_table tbody .ico_true {
+    display: block
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table .cell {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-width: 0 1px;
+    background: #f9f9fb;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table .cell:first-child {
+    width: 200px;
+    border-left: 0;
+    background: #fff
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table .btn_group {
+    padding: 18px 0 36px
+}
+
+.ly_config_table_wrapper.pc_type .comparison_table .btn_start {
+    height: 36px
+}
+
+.ly_config_table_wrapper.pc_type .btn_group {
+    padding-top: 18px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap {
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_head {
+    background: #f5f5f7
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_head .title {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_head .description {
+    margin-top: 7px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #666
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content {
+    background: #fff
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .comparison_table {
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 16px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content thead .inner {
+    padding: 20px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content thead .title {
+    display: block;
+    font-size: 16px;
+    line-height: 19px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content tbody .row:last-child .cell {
+    padding-bottom: 20px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content tbody .divide {
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content tbody .divide .cell {
+    padding-bottom: 20px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content tbody th {
+    vertical-align: top
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content tbody th.sub_head {
+    font-weight: 400
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content tbody td {
+    vertical-align: middle
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content tbody .cell {
+    padding: 5px 0
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .theme {
+    display: block;
+    padding-top: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 16px;
+    color: #767676
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .text {
+    display: block;
+    font-weight: 700;
+    color: #767676
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .text.point {
+    color: #07b53b
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .text:not(:first-child) {
+    margin-top: 2px;
+    font-weight: 400
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .ico_false, .ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .ico_true {
+    font-size: 0;
+    line-height: 0
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .ico_true:before {
+    content: "";
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -265px -132px;
+    width: 16px;
+    height: 16px;
+    display: inline-block
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .ico_false:before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 2px;
+    background: #c5c5c5;
+    vertical-align: middle
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .comparison_table_content .btn_start {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #07b53b;
+    font-size: 14px;
+    background: #fff;
+    color: #07b53b
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip {
+    display: inline-block;
+    position: relative;
+    vertical-align: 1px;
+    font-weight: 400
+}
+
+@media screen and (max-width: 767px) {
+    .ly_config_table_wrapper .comparison_table_wrap .tooltip {
+        position: static
+    }
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .btn_tip {
+    vertical-align: top
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .btn_tip:before {
+    content: "";
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -411px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: top
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .btn_tip.open:before, .ly_config_table_wrapper .comparison_table_wrap .tooltip .btn_tip:hover:before {
+    background-position: -550px -387px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .btn_tip.open ~ .ly_tip {
+    display: block
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .ly_tip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -31px;
+    z-index: 1;
+    width: 270px;
+    margin-top: 10px;
+    padding: 15px 32px 15px 16px;
+    border: 1px solid #989898;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #222
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .ly_tip:before {
+    content: "";
+    position: absolute;
+    left: 31px;
+    bottom: 100%;
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -369px;
+    width: 16px;
+    height: 10px;
+    display: inline-block
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .ly_tip.arr_left_bottom {
+    top: auto;
+    bottom: 100%;
+    margin-top: auto;
+    margin-bottom: 10px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .ly_tip.arr_left_bottom:before {
+    bottom: auto;
+    top: 100%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+@media screen and (max-width: 767px) {
+    .ly_config_table_wrapper .comparison_table_wrap .tooltip .ly_tip {
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        max-width: 100%
+    }
+
+    .ly_config_table_wrapper .comparison_table_wrap .tooltip .ly_tip:before {
+        display: none
+    }
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .btn_close {
+    position: absolute;
+    top: 8px;
+    right: 8px
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .tooltip .btn_close:before {
+    content: "";
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -122px;
+    width: 12px;
+    height: 12px;
+    display: inline-block
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .btn_group {
+    text-align: right
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .btn_group .btn_prev {
+    padding: 4px 0;
+    font-size: 15px;
+    color: #111
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .btn_group .btn_prev:before {
+    content: "";
+    margin-right: 6px;
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -576px -295px;
+    width: 6px;
+    height: 11px;
+    display: inline-block
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .btn_ly_close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 0;
+    line-height: 0;
+    color: transparent
+}
+
+.ly_config_table_wrapper .comparison_table_wrap .btn_ly_close:before {
+    content: "";
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -173px;
+    width: 24px;
+    height: 24px;
+    display: inline-block
+}
+
+.config_area {
+    position: relative;
+    background-color: #fff
+}
+
+@media (max-width: 840px) {
+    .config_area {
+        overflow: hidden;
+        min-height: 100%;
+        padding-bottom: 87px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box
+    }
+}
+
+.config_area.bg_point {
+    height: 600px;
+    background-color: #f5f5f7
+}
+
+@media (max-width: 840px) {
+    .config_area.bg_point {
+        height: auto;
+        padding-bottom: 139px
+    }
+}
+
+.config_area .btn_ly_next {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    margin-top: -29px;
+    font-size: 0;
+    line-height: 0;
+    color: transparent
+}
+
+@media (max-width: 840px) {
+    .config_area .btn_ly_next {
+        display: none
+    }
+}
+
+.config_area .btn_ly_next:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -4px;
+    width: 32px;
+    height: 58px;
+    display: inline-block;
+    content: "";
+    display: block
+}
+
+.config_area .btn_group {
+    position: relative;
+    padding: 0 60px 30px;
+    text-align: right
+}
+
+@media (max-width: 840px) {
+    .config_area .btn_group {
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        margin: 0 30px;
+        padding: 0
+    }
+}
+
+.config_area .btn_group.full {
+    width: 250px;
+    text-align: left
+}
+
+@media (max-width: 840px) {
+    .config_area .btn_group.full {
+        width: auto;
+        text-align: center
+    }
+}
+
+.config_area .btn_group.full button {
+    display: block;
+    width: 226px;
+    height: 50px;
+    border: 1px solid #07b53b;
+    color: #00af18;
+    font-weight: 500
+}
+
+@media (max-width: 840px) {
+    .config_area .btn_group.full button {
+        width: 100%
+    }
+}
+
+.config_area .btn_group.full button + button {
+    margin-top: 14px;
+    opacity: .9
+}
+
+.config_area .btn_group button {
+    height: 42px;
+    padding: 0 26px;
+    font-size: 15px;
+    line-height: 43px;
+    color: #111
+}
+
+.config_area .btn_group button.btn_prev:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -576px -295px;
+    width: 6px;
+    height: 11px;
+    content: "";
+    display: inline-block;
+    margin-right: 6px
+}
+
+.config_area .btn_group button.btn_next {
+    min-width: 100px;
+    background-color: #07b53b;
+    color: #fff
+}
+
+.config_area .btn_group button.btn_next:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -574px -321px;
+    width: 6px;
+    height: 10px;
+    content: "";
+    display: inline-block;
+    margin-left: 7px
+}
+
+.config_area .btn_group button.btn_next[disabled] {
+    background-color: silver
+}
+
+.config_area .btn_group button.point {
+    background-color: #07b53b;
+    font-size: 16px;
+    color: #fff
+}
+
+.config_area .btn_group button.btn_close {
+    position: absolute;
+    left: 34px;
+    bottom: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #999
+}
+
+@media (max-width: 840px) {
+    .config_area .btn_group button.btn_close {
+        left: 0;
+        bottom: 0
+    }
+}
+
+.config_area .btn_group .link_help {
+    display: inline-block;
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    text-decoration: underline
+}
+
+.config_area .manager {
+    padding: 43px 0 50px 60px;
+    word-break: break-all
+}
+
+@media (max-width: 840px) {
+    .config_area .manager {
+        padding: 29px 30px 0
+    }
+}
+
+.config_area .manager .stage {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    color: transparent
+}
+
+.config_area .manager .stage.start {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -301px -260px;
+    width: 125px;
+    height: 11px;
+    display: inline-block
+}
+
+.config_area .manager .stage.start + .title {
+    margin-top: 120px;
+    font-size: 44px;
+    line-height: 53px
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.start + .title {
+        margin-top: 40px;
+        font-size: 40px;
+        line-height: 48px
+    }
+}
+
+.config_area .manager .stage.start ~ .desc {
+    padding-right: 410px
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.start ~ .desc {
+        padding-right: 30px
+    }
+}
+
+.config_area .manager .stage.start ~ .img_box {
+    right: 53px;
+    bottom: 127px
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.start ~ .img_box {
+        margin: 30px -30px -30px
+    }
+}
+
+.config_area .manager .stage.start ~ .img_box img {
+    width: 410px
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.start ~ .img_box img {
+        width: 330px
+    }
+}
+
+.config_area .manager .stage.templet {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -439px -352px;
+    width: 76px;
+    height: 11px;
+    display: inline-block
+}
+
+.config_area .manager .stage.templet ~ .img_box {
+    right: 115px;
+    bottom: 110px
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.templet ~ .img_box {
+        right: auto;
+        bottom: auto;
+        margin: 90px 0 7px;
+        text-align: left
+    }
+}
+
+.config_area .manager .stage.templet ~ .img_box img {
+    width: 263px
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.templet ~ .img_box img {
+        width: 212px
+    }
+}
+
+.config_area .manager .stage.restart {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -301px -260px;
+    width: 125px;
+    height: 11px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.restart ~ .img_box {
+        margin: 10px 0
+    }
+}
+
+.config_area .manager .stage.complete {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -439px -332px;
+    width: 78px;
+    height: 12px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .stage.complete ~ .img_box {
+        margin: 30px 0 10px
+    }
+}
+
+.config_area .manager .title {
+    margin-top: 47px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    color: #111
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .title {
+        margin-top: 40px;
+        font-size: 36px;
+        line-height: 44px;
+        word-break: break-all
+    }
+
+    .ko_KR .config_area .manager .title {
+        word-break: keep-all
+    }
+
+    .ja_JP .config_area .manager .title {
+        word-break: break-all
+    }
+}
+
+.config_area .manager .title span {
+    font-weight: 500
+}
+
+.config_area .manager .desc {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .desc {
+        padding-right: 30px
+    }
+
+    .ko_KR .config_area .manager .desc {
+        word-break: keep-all
+    }
+
+    .ja_JP .config_area .manager .desc {
+        word-break: break-all
+    }
+}
+
+.config_area .manager .img_box {
+    position: absolute;
+    right: 80px;
+    bottom: 40px
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .img_box {
+        position: static;
+        right: auto;
+        bottom: auto;
+        text-align: center
+    }
+}
+
+.config_area .manager .img_box img {
+    width: 315px;
+    height: auto;
+    vertical-align: top
+}
+
+@media (max-width: 840px) {
+    .config_area .manager .img_box img {
+        width: 250px
+    }
+}
+
+@media (max-width: 840px) {
+    .config_area .set_template_wrap ~ .btn_group {
+        bottom: 0;
+        margin: 0;
+        padding: 20px 30px 25px;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+        -webkit-transition: all .3s;
+        transition: all .3s
+    }
+}
+
+.config_area .set_template {
+    padding: 60px 60px 47px
+}
+
+@media (max-width: 840px) {
+    .config_area .set_template {
+        overflow: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 40px 30px 112px
+    }
+}
+
+.config_area .set_template .title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 38px;
+    color: #111
+}
+
+.config_area .set_template .desc {
+    margin: 8px 0 0 3px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #111
+}
+
+@media (max-width: 840px) {
+    .config_area .set_template .desc {
+        margin-top: 4px
+    }
+}
+
+.config_area .set_template .btn_group {
+    margin-top: 20px
+}
+
+.config_area .list_template {
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    margin-top: 53px
+}
+
+.config_area .list_template:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template {
+        display: block;
+        margin-top: 25px
+    }
+}
+
+.config_area .list_template li {
+    float: left;
+    width: 205px
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template li {
+        float: none;
+        width: auto
+    }
+}
+
+.config_area .list_template li + li {
+    margin-left: 32px
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template li + li {
+        margin: 14px 0 0 0
+    }
+}
+
+.config_area .list_template label {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 176px 17px 35px;
+    background-color: #f9f9f9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template label {
+        padding: 22px 15px 25px 119px
+    }
+}
+
+.config_area .list_template label.lite:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -301px -132px;
+    width: 130px;
+    height: 120px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template label.lite:after {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -286px -371px;
+        width: 86px;
+        height: 80px;
+        display: inline-block
+    }
+}
+
+.config_area .list_template label.basic:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -4px -39px;
+    width: 130px;
+    height: 120px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template label.basic:after {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -4px -371px;
+        width: 86px;
+        height: 80px;
+        display: inline-block
+    }
+}
+
+.config_area .list_template label.premium:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -301px -4px;
+    width: 130px;
+    height: 120px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template label.premium:after {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -98px -371px;
+        width: 86px;
+        height: 80px;
+        display: inline-block
+    }
+}
+
+.config_area .list_template label:after {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template label:after {
+        top: 0;
+        left: 12px;
+        right: auto;
+        bottom: 0;
+        width: 86px;
+        height: 80px
+    }
+}
+
+.config_area .list_template label strong {
+    display: block;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 25px;
+    color: #888
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template label strong {
+        font-size: 20px
+    }
+}
+
+.config_area .list_template label span {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #999
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template label span {
+        margin-top: 9px;
+        font-weight: 400
+    }
+}
+
+.config_area .list_template input[type=radio]:checked + label {
+    background-color: #fff
+}
+
+.config_area .list_template input[type=radio]:checked + label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid #07b53b
+}
+
+.config_area .list_template input[type=radio]:checked + label.lite:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -167px;
+    width: 130px;
+    height: 120px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template input[type=radio]:checked + label.lite:after {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -192px -371px;
+        width: 86px;
+        height: 80px;
+        display: inline-block
+    }
+}
+
+.config_area .list_template input[type=radio]:checked + label.basic:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -163px -4px;
+    width: 130px;
+    height: 120px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template input[type=radio]:checked + label.basic:after {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -439px -244px;
+        width: 86px;
+        height: 80px;
+        display: inline-block
+    }
+}
+
+.config_area .list_template input[type=radio]:checked + label.premium:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -4px -167px;
+    width: 130px;
+    height: 120px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .list_template input[type=radio]:checked + label.premium:after {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -439px -156px;
+        width: 86px;
+        height: 80px;
+        display: inline-block
+    }
+}
+
+.config_area .list_template input[type=radio]:checked + label strong {
+    font-weight: 600;
+    color: #000
+}
+
+.config_area .list_template input[type=radio]:checked + label span {
+    color: #444
+}
+
+@media (max-width: 840px) {
+    .config_area.hide .config_head.check ~ .btn_group, .config_area.hide .set_template_wrap ~ .btn_group {
+        bottom: -87px;
+        opacity: .3
+    }
+}
+
+.config_area .config_head {
+    position: relative;
+    padding: 48px 160px 47px 60px;
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #f5f5f7
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head {
+        padding: 33px 100px 31px 30px
+    }
+
+    .ko_KR .config_area .config_head {
+        word-break: keep-all
+    }
+
+    .ja_JP .config_area .config_head {
+        word-break: break-all
+    }
+}
+
+.config_area .config_head.check {
+    padding: 29px 60px 26px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head.check {
+        padding: 0 20px;
+        height: 150px;
+        white-space: nowrap
+    }
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head.check:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle
+    }
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head.check .inner {
+        display: inline-block;
+        vertical-align: middle;
+        white-space: normal
+    }
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head.check ~ .btn_group {
+        bottom: 0;
+        margin: 0;
+        padding: 20px 30px 25px;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+        -webkit-transition: all .3s;
+        transition: all .3s
+    }
+}
+
+.config_area .config_head .title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #111
+}
+
+.config_area .config_head .desc {
+    margin-top: 7px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #666
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .desc {
+        margin-top: 6px
+    }
+}
+
+.config_area .config_head .step {
+    position: absolute;
+    top: 28px;
+    right: 60px;
+    text-align: right
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .step {
+        top: 41px;
+        right: 30px
+    }
+}
+
+.config_area .config_head .step .circle {
+    font-size: 0;
+    text-align: right
+}
+
+.config_area .config_head .step .circle span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d8d8d8;
+    vertical-align: top
+}
+
+.config_area .config_head .step .circle span + span {
+    margin-left: 6px
+}
+
+.config_area .config_head .step .circle span.on {
+    background-color: #07b53b
+}
+
+.config_area .config_head .step [class^=num] {
+    margin-top: 26px;
+    font-size: 0;
+    line-height: 0;
+    color: transparent
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .step [class^=num] {
+        margin-top: 24px
+    }
+}
+
+.config_area .config_head .step [class^=num].num1 {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -439px -80px;
+    width: 86px;
+    height: 68px;
+    display: inline-block;
+    margin-right: 5px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .step [class^=num].num1 {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -144px -459px;
+        width: 52px;
+        height: 41px;
+        display: inline-block;
+        margin-right: 3px
+    }
+}
+
+.config_area .config_head .step [class^=num].num2 {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -439px -4px;
+    width: 103px;
+    height: 68px;
+    display: inline-block;
+    margin-right: -3px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .step [class^=num].num2 {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -74px -459px;
+        width: 62px;
+        height: 41px;
+        display: inline-block
+    }
+}
+
+.config_area .config_head .step [class^=num].num3 {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -231px -295px;
+    width: 105px;
+    height: 68px;
+    display: inline-block;
+    margin-right: -3px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .step [class^=num].num3 {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -380px -371px;
+        width: 63px;
+        height: 41px;
+        display: inline-block
+    }
+}
+
+.config_area .config_head .step [class^=num].num4 {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -118px -295px;
+    width: 105px;
+    height: 68px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .step [class^=num].num4 {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -451px -371px;
+        width: 63px;
+        height: 41px;
+        display: inline-block
+    }
+}
+
+.config_area .config_head .step [class^=num].num5 {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -4px -295px;
+    width: 106px;
+    height: 68px;
+    display: inline-block
+}
+
+@media (max-width: 840px) {
+    .config_area .config_head .step [class^=num].num5 {
+        background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+        background-size: 586px 525px;
+        background-position: -344px -295px;
+        width: 65px;
+        height: 41px;
+        display: inline-block
+    }
+}
+
+.config_area .config_cont {
+    padding: 35px 60px 28px
+}
+
+.config_area .config_cont:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+@media (max-width: 840px) {
+    .config_area .config_cont {
+        padding: 30px 30px 20px
+    }
+}
+
+.config_area .config_cont .title_config {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #666
+}
+
+.config_area .config_cont .title_config label {
+    cursor: text
+}
+
+.config_area .scroll_wrap {
+    -webkit-box-shadow: inset 0 -10px 10px -10px rgba(0, 0, 0, .3);
+    box-shadow: inset 0 -10px 10px -10px rgba(0, 0, 0, .3)
+}
+
+@media (max-width: 840px) {
+    .config_area .scroll_wrap {
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+}
+
+.config_area .scroll_area {
+    overflow-y: auto;
+    height: 345px
+}
+
+@media (max-width: 840px) {
+    .config_area .scroll_area {
+        position: absolute;
+        top: 150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: auto;
+        padding-bottom: 87px
+    }
+}
+
+.config_area .scroll_area .title_config {
+    height: 40px;
+    padding: 0 20px;
+    border-top: 1px solid #e1e1e1;
+    background-color: #fcfcfc;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 40px;
+    color: #777
+}
+
+@media (max-width: 840px) {
+    .config_area .scroll_area .title_config:first-child {
+        border-top: 0
+    }
+}
+
+.config_area .list_config {
+    margin-bottom: 5px
+}
+
+.config_area .list_config li {
+    padding: 0 25px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+@media (max-width: 840px) {
+    .config_area .list_config li {
+        padding: 0 20px
+    }
+}
+
+.config_area .list_config li + li {
+    border-top: 1px solid #f9f9f9
+}
+
+.config_area .list_config .box {
+    display: table;
+    width: 100%;
+    padding: 14px 0 12px
+}
+
+.config_area .list_config .box .label {
+    display: table-cell;
+    min-width: 110px;
+    vertical-align: middle
+}
+
+.config_area .list_config .box em {
+    display: table-cell;
+    min-width: 100px;
+    padding-left: 26px;
+    font-weight: 700;
+    color: #00af18;
+    text-align: right;
+    vertical-align: middle
+}
+
+.config_area .list_config p {
+    padding: 12px 0 8px;
+    border-top: 1px solid #f9f9f9;
+    font-size: 13px;
+    line-height: 16px;
+    color: #999
+}
+
+@media (max-width: 840px) {
+    .config_area .list_config p {
+        margin-right: -20px;
+        padding: 12px 20px 12px 0
+    }
+}
+
+.config_area .group {
+    float: left;
+    width: 315px;
+    min-height: 305px
+}
+
+@media (max-width: 840px) {
+    .config_area .group {
+        float: none;
+        width: auto;
+        min-height: 0
+    }
+}
+
+.config_area .group + .group {
+    margin-left: 50px
+}
+
+@media (max-width: 840px) {
+    .config_area .group + .group {
+        margin: 38px 0 0 0
+    }
+}
+
+.config_area .group .title_config {
+    margin-top: 15px
+}
+
+.config_area .group.set_invite_option {
+    float: none;
+    width: auto
+}
+
+.config_area .blank {
+    height: 93px
+}
+
+@media (max-width: 840px) {
+    .config_area .blank {
+        height: 28px
+    }
+}
+
+.config_area .config_box {
+    position: relative
+}
+
+.config_area .config_box + .config_box {
+    margin-top: 30px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_box + .config_box {
+        margin-top: 20px
+    }
+}
+
+.config_area .config_box + .title_config {
+    margin-top: 53px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_box + .title_config {
+        margin-top: 38px
+    }
+}
+
+.config_area .config_box .list_check {
+    float: left;
+    width: 315px;
+    display: none;
+    margin: 5px 0 0
+}
+
+@media (max-width: 840px) {
+    .config_area .config_box .list_check {
+        width: auto
+    }
+}
+
+.config_area .config_box .list_check + .list_check {
+    margin-left: 50px;
+    margin-top: 43px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_box .list_check + .list_check {
+        margin-left: 0;
+        margin-top: 18px
+    }
+}
+
+.config_area .config_box .list_check label {
+    line-height: 41px
+}
+
+.config_area .config_box .list_check label:before {
+    top: 10px
+}
+
+.config_area .config_box .list_check input[type=radio]:checked + label:after {
+    top: 17px
+}
+
+.config_area .config_box .list_check .label_config {
+    padding-top: 6px;
+    padding-bottom: 1px;
+    font-size: 18px
+}
+
+.config_area .config_box .config_box {
+    display: none;
+    margin-top: 30px
+}
+
+@media (max-width: 840px) {
+    .config_area .config_box .config_box {
+        margin-top: 20px
+    }
+}
+
+.config_area .config_box .sel_box {
+    position: relative
+}
+
+.config_area .config_box .sel_box select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    opacity: 0;
+    cursor: pointer
+}
+
+.config_area .config_box .label_config, .config_area .config_box .selected {
+    position: relative;
+    display: block;
+    padding: 11px 50px 11px 0;
+    border-bottom: 1px solid #d8d8d8;
+    font-size: 20px;
+    line-height: 25px;
+    color: #111
+}
+
+.config_area .config_box input[type=checkbox] + .label_config:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 42px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #ddd;
+    -webkit-transition: all .2s;
+    transition: all .2s
+}
+
+.config_area .config_box input[type=checkbox] + .label_config:after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: 17px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, .75);
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, .75);
+    -webkit-transition: all .2s;
+    transition: all .2s
+}
+
+.config_area .config_box input[type=checkbox]:checked + .label_config:before {
+    background-color: #07b53b
+}
+
+.config_area .config_box input[type=checkbox]:checked + .label_config:after {
+    right: 0
+}
+
+.config_area .config_box input[type=checkbox]:checked ~ .config_box, .config_area .config_box input[type=checkbox]:checked ~ .list_check {
+    display: block
+}
+
+.config_area .config_box .selected:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -344px -344px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    margin-top: -8px
+}
+
+.config_area .config_box .desc {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999
+}
+
+@media (max-width: 840px) {
+    .config_area .config_box .desc {
+        margin: 9px 0 -4px
+    }
+}
+
+.config_area .noti {
+    padding: 14px 30px 12px 26px;
+    background-color: #fafafa;
+    font-size: 14px;
+    line-height: 22px;
+    color: #444
+}
+
+@media (max-width: 840px) {
+    .config_area .noti {
+        padding: 15px 10px 17px 18px
+    }
+}
+
+.config_area .noti a {
+    color: inherit;
+    text-decoration: underline
+}
+
+.config_area .list_check {
+    margin: 24px 0 4px
+}
+
+.config_area .list_check:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+@media (max-width: 840px) {
+    .config_area .list_check {
+        margin: 23px 0 0
+    }
+}
+
+.config_area .list_check .title_config {
+    margin-bottom: 7px
+}
+
+.config_area .list_check .desc {
+    margin: 0;
+    padding-top: 11px;
+    clear: both
+}
+
+.config_area .list_check .group {
+    min-height: 0;
+    position: relative
+}
+
+@media (max-width: 840px) {
+    .config_area .list_check .group + .group {
+        margin-top: 0
+    }
+}
+
+.config_area .list_check .check_box {
+    display: block
+}
+
+.config_area .list_check .check_box input[type=checkbox]:checked + label:before, .config_area .list_check .check_box input[type=radio]:checked + label:before {
+    background-color: #07b53b
+}
+
+.config_area .list_check .check_box input[type=checkbox]:checked + label:after, .config_area .list_check .check_box input[type=radio]:checked + label:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -525px -332px;
+    width: 14px;
+    height: 10px;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 5px
+}
+
+.config_area .list_check .check_box label {
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    font-size: 18px;
+    line-height: 41px
+}
+
+.config_area .list_check .check_box label:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #f2f2f2
+}
+
+.config_area.tutorial {
+    overflow: hidden;
+    text-align: center
+}
+
+.config_area.tutorial .config_head {
+    height: 380px;
+    padding: 0;
+    border-bottom: 0
+}
+
+.config_area.tutorial .config_head .step {
+    top: auto;
+    bottom: 30px;
+    left: 0;
+    right: 0
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .config_head .step {
+        bottom: 32px
+    }
+}
+
+.config_area.tutorial .config_head .step .circle {
+    text-align: center
+}
+
+.config_area.tutorial .config_cont {
+    padding: 31px 0 38px
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .config_cont {
+        padding: 52px 0 37px
+    }
+}
+
+.config_area.tutorial .config_cont .title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .config_cont .title {
+        font-size: 28px;
+        line-height: 33px
+    }
+}
+
+.config_area.tutorial .config_cont .desc {
+    margin-top: 13px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .config_cont .desc {
+        margin-top: 12px;
+        padding: 0 20px;
+        font-size: 15px;
+        line-height: 22px
+    }
+}
+
+.config_area.tutorial .btn_group {
+    padding: 0 10px 25px;
+    text-align: center
+}
+
+.config_area.tutorial .btn_group:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .btn_group {
+        bottom: 30px;
+        margin: 0 10px;
+        padding: 0
+    }
+}
+
+.config_area.tutorial .btn_group button {
+    height: auto;
+    padding: 6px 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    color: #999;
+    vertical-align: middle
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .btn_group button {
+        font-size: 15px
+    }
+}
+
+.config_area.tutorial .btn_group button.btn {
+    float: left
+}
+
+.config_area.tutorial .btn_group button.point {
+    float: right;
+    color: #111;
+    background-color: transparent
+}
+
+.config_area.tutorial .btn_group button.btn_view {
+    width: 190px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid #07b53b;
+    font-weight: 500;
+    line-height: 50px;
+    color: #00af18
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .btn_group button.btn_view {
+        width: 48%;
+        max-width: 163px
+    }
+}
+
+.config_area.tutorial .btn_group button.btn_start {
+    width: 190px;
+    height: 50px;
+    margin-left: 5px;
+    padding: 0;
+    background-color: #07b53b;
+    font-weight: 600;
+    line-height: 50px;
+    color: #fff
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .btn_group button.btn_start {
+        width: 48%;
+        max-width: 163px
+    }
+}
+
+.config_area.tutorial .img_wrap {
+    padding-top: 37px;
+    font-size: 0;
+    white-space: nowrap
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .img_wrap {
+        padding-top: 60px
+    }
+}
+
+.config_area.tutorial .img_wrap .img_box {
+    display: inline-block;
+    width: 100%
+}
+
+.config_area.tutorial .img_wrap img {
+    vertical-align: top;
+    width: 400px;
+    height: auto
+}
+
+@media (max-width: 840px) {
+    .config_area.tutorial .img_wrap img {
+        width: 320px
+    }
+}
+
+.config_area .btn_ly_close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 0;
+    line-height: 0;
+    color: transparent
+}
+
+.config_area .btn_ly_close:before {
+    background-position: -550px -205px;
+    display: inline-block;
+    content: "";
+    display: block
+}
+
+.config_area .btn_ly_close:before, .config_area .set_template_wrap ~ .btn_ly_close:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    width: 24px;
+    height: 24px
+}
+
+.config_area .set_template_wrap ~ .btn_ly_close:before {
+    background-position: -550px -173px;
+    display: inline-block
+}
+
+.config_area .btn_ly_prev {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    margin-top: -29px;
+    font-size: 0;
+    line-height: 0;
+    color: transparent
+}
+
+@media (max-width: 840px) {
+    .config_area .btn_ly_prev {
+        display: none
+    }
+}
+
+.config_area .btn_ly_prev:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -70px;
+    width: 32px;
+    height: 58px;
+    display: inline-block;
+    content: "";
+    display: block
+}
+
+.ly_config_alert {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 151;
+    background-color: rgba(0, 0, 0, .5);
+    overflow: auto;
+    text-align: center;
+    white-space: nowrap
+}
+
+.ly_config_alert:before {
+    content: "";
+    width: 0;
+    height: 100%
+}
+
+.config_layer, .ly_config_alert:before {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.config_layer {
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+    width: 90%;
+    max-width: 335px;
+    border-radius: 6px;
+    padding: 40px 20px;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: keep-all;
+    -webkit-box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3)
+}
+
+.ja_JP .config_layer, .zh_CN .config_layer, .zh_TW .config_layer {
+    word-break: break-all
+}
+
+.config_layer.align_left {
+    text-align: left
+}
+
+.config_layer.align_left .desc {
+    padding: 0
+}
+
+.ko_KR .config_layer.align_left .desc {
+    word-break: break-all
+}
+
+.config_layer .title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #000;
+    text-align: center
+}
+
+.config_layer .title.only {
+    padding: 20px 0 18px;
+    font-weight: 400
+}
+
+.config_layer .highlight {
+    color: #00af18
+}
+
+.config_layer .desc {
+    margin-top: 12px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #222
+}
+
+.config_layer .btn_group {
+    margin-top: 28px;
+    text-align: center
+}
+
+.config_layer .btn_group button {
+    border: 0;
+    border-radius: 0;
+    min-width: 100px;
+    height: 42px;
+    background-color: #f1f1f1;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 43px;
+    color: #111
+}
+
+.config_layer .btn_group button + button {
+    margin-left: 8px
+}
+
+.config_layer .btn_group button.point {
+    background-color: #07b53b;
+    color: #fff
+}
+
+.config_layer .list_config {
+    margin-top: 24px;
+    padding: 28px 0 8px;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1
+}
+
+.config_layer .list_config .group + .group {
+    margin-top: 35px
+}
+
+.config_layer .list_config .title_config {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #222
+}
+
+.config_layer .list_config .check_box {
+    position: relative;
+    display: block;
+    margin-top: 11px
+}
+
+.config_layer .list_config .check_box + .check_box {
+    margin-top: 7px
+}
+
+.config_layer .list_config input[type=radio]:checked + label:before {
+    border: 6px solid #07b53b;
+    background-color: #fff
+}
+
+.config_layer .list_config label {
+    position: relative;
+    display: block;
+    padding-left: 29px;
+    font-size: 16px;
+    line-height: 23px
+}
+
+.config_layer .list_config label:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -1px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.config_layer .list_config .chk_desc {
+    margin-top: 3px;
+    padding-left: 30px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #888
+}
+
+.config_layer .list_noti {
+    margin-top: 19px;
+    padding: 17px 15px 17px 14px;
+    background-color: #fafafa;
+    text-align: left
+}
+
+.config_layer .list_noti li {
+    position: relative;
+    padding-left: 6px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #777
+}
+
+.config_layer .list_noti li + li {
+    margin-top: 10px
+}
+
+.config_layer .list_noti li:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #999
+}
+
+.ly_manager {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    white-space: normal;
+    max-height: 100%;
+    overflow: auto;
+    width: 760px;
+    border-radius: 10px
+}
+
+@media (max-width: 840px) {
+    .ly_manager {
+        overflow: auto;
+        display: block;
+        width: auto;
+        height: 100%;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+}
+
+.manager_area {
+    position: relative;
+    background-color: #fff
+}
+
+@media (max-width: 840px) {
+    .manager_area {
+        min-height: 100%
+    }
+}
+
+.manager_area .stage {
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    vertical-align: top
+}
+
+.manager_area .stage.ob_manager {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -4px -4px;
+    width: 151px;
+    height: 27px;
+    display: inline-block
+}
+
+.manager_area .step {
+    display: inline-block;
+    height: 25px;
+    padding: 0 9px;
+    background-color: rgba(39, 39, 39, .85);
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #cdcdcd
+}
+
+.manager_area .step span {
+    color: #fff
+}
+
+.manager_area .btn_ly_close {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -136px;
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 0;
+    line-height: 0;
+    color: transparent
+}
+
+.ly_manager .intro {
+    height: 470px;
+    padding: 30px 274px 40px 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro {
+        height: auto;
+        padding: 30px 24px 139px;
+        overflow: hidden
+    }
+}
+
+.ly_manager .intro:after {
+    position: absolute;
+    top: 60px;
+    right: 45px;
+    width: 220px;
+    height: 300px;
+    background: url(https://static.worksmobile.net/static/pwe/wm/admin/onboarding/img_start.svg) no-repeat;
+    background-size: 100%;
+    content: ""
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro:after {
+        position: static;
+        float: right;
+        width: 198px;
+        height: 270px;
+        margin: 11px -9px 0 0
+    }
+}
+
+.ly_manager .intro .name_area {
+    position: relative;
+    margin-top: 35px
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .name_area {
+        margin-top: 25px
+    }
+}
+
+.ly_manager .intro .name_area .ly_edit {
+    top: 50px
+}
+
+.ly_manager .intro .name_text {
+    font-size: 32px;
+    line-height: 37px;
+    white-space: nowrap;
+    color: #222
+}
+
+.ly_manager .intro .name {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    white-space: nowrap;
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .name {
+        font-size: 30px
+    }
+}
+
+.ly_manager .intro .name strong {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.ly_manager .intro .name .btn_edit {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 8px 0 0 4px
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .name .btn_edit {
+        margin-top: 7px
+    }
+}
+
+.ly_manager .intro .corp_area {
+    position: relative;
+    margin-top: 20px
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .corp_area {
+        margin-top: 25px
+    }
+}
+
+.ly_manager .intro .corp_area .ly_edit {
+    top: 45px
+}
+
+.ly_manager .intro .corp {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    color: #222
+}
+
+.ly_manager .intro .corp .btn_edit {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 9px 0 0 4px
+}
+
+.ly_manager .intro .corp strong {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    letter-spacing: normal;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .corp {
+        font-size: 26px;
+        line-height: 36px;
+        letter-spacing: -.93px
+    }
+
+    .ly_manager .intro .corp .btn_edit {
+        margin: 3px 0 0 4px
+    }
+}
+
+.ly_manager .intro .corp_desc {
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    color: #222
+}
+
+.ja_JP .ly_manager .intro .corp_desc {
+    word-break: keep-all
+}
+
+.ly_manager .intro .desc {
+    margin-top: 25px;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -.5px;
+    word-break: break-word;
+    word-wrap: break-word;
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .desc {
+        margin-top: 27px;
+        font-size: 26px;
+        letter-spacing: -.9px
+    }
+}
+
+.ja_JP .ly_manager .intro .desc {
+    word-break: keep-all
+}
+
+.ly_manager .intro .btn_edit {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -237px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: top
+}
+
+.ly_manager .intro .ly_edit {
+    position: absolute;
+    left: 0;
+    width: 240px;
+    padding: 12px 14px 14px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .15);
+    border-radius: 2px;
+    border: 1px solid #989898;
+    background-color: #fff;
+    z-index: 2
+}
+
+.ly_manager .intro .ly_edit:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -435px;
+    width: 16px;
+    height: 10px;
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    left: 31px;
+    content: ""
+}
+
+.ly_manager .intro .ly_edit .input_item + .input_item {
+    margin-top: 9px
+}
+
+.ly_manager .intro .ly_edit .input_item.error .config_input {
+    border-color: #fd472b
+}
+
+.ly_manager .intro .ly_edit .config_input {
+    width: 100%;
+    padding: 6px 2px;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 19px;
+    outline: 0 none;
+    color: #222
+}
+
+.ly_manager .intro .ly_edit .config_input:focus {
+    border-color: #157efb
+}
+
+.ly_manager .intro .ly_edit .config_input::-ms-input-placeholder {
+    color: hsla(0, 0%, 59.6%, .5)
+}
+
+.ly_manager .intro .ly_edit .config_input::placeholder {
+    color: hsla(0, 0%, 59.6%, .5)
+}
+
+.ly_manager .intro .ly_edit .config_input::-webkit-input-placeholder {
+    color: hsla(0, 0%, 59.6%, .5)
+}
+
+.ly_manager .intro .ly_edit .config_input::-moz-placeholder {
+    color: hsla(0, 0%, 59.6%, .5);
+    opacity: 1
+}
+
+.ly_manager .intro .ly_edit .config_input:-ms-input-placeholder {
+    color: hsla(0, 0%, 59.6%, .5)
+}
+
+.ly_manager .intro .ly_edit .config_input:-moz-placeholder {
+    color: hsla(0, 0%, 59.6%, .5);
+    opacity: 1
+}
+
+.ly_manager .intro .ly_edit .error_text {
+    display: inline-block;
+    margin: 7px 0 0 2px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fd472b
+}
+
+.ly_manager .intro .ly_edit .btn_area {
+    margin-top: 16px;
+    text-align: right;
+    font-size: 0
+}
+
+.ly_manager .intro .ly_edit .btn_cancel {
+    min-width: auto;
+    height: 28px;
+    padding: 0 13px;
+    border-radius: 2px;
+    border: 1px solid #c5c5c6;
+    font-size: 12px;
+    line-height: 28px
+}
+
+.ly_manager .intro .ly_edit .btn_cancel:disabled {
+    opacity: .4
+}
+
+.ly_manager .intro .ly_edit .btn_save {
+    min-width: auto;
+    height: 28px;
+    margin-left: 5px;
+    padding: 0 13px;
+    border-radius: 2px;
+    background-color: #157efb;
+    font-size: 12px;
+    line-height: 28px
+}
+
+.ly_manager .intro .ly_edit .btn_save:hover {
+    background-color: #1373e6
+}
+
+.ly_manager .intro .ly_edit .btn_save:disabled {
+    opacity: .4
+}
+
+.ly_manager .intro .ly_edit .btn_save:disabled:hover {
+    background-color: #157efb
+}
+
+.ly_manager .intro .btn_group, .ly_manager .intro .btn_group.reset {
+    margin-top: 35px
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .btn_group {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 24px 24px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-top: 0
+    }
+
+    .ly_manager .intro .btn_group.reset {
+        margin-top: 0
+    }
+}
+
+.ly_manager .intro .intro_desc {
+    position: absolute;
+    left: 40px;
+    bottom: 30px;
+    max-width: 667px;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: -.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    color: #444
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .intro_desc {
+        position: static
+    }
+}
+
+.ly_manager .intro .intro_desc em {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #157efb
+}
+
+.ja_JP .ly_manager .intro .intro_desc {
+    word-break: keep-all
+}
+
+.ly_manager .intro .btn_intro {
+    min-width: 194px;
+    height: 44px;
+    padding: 0 26px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #157efb;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 44px;
+    color: #fff
+}
+
+@media (max-width: 840px) {
+    .ly_manager .intro .btn_intro {
+        width: 100%;
+        margin-top: 15px
+    }
+}
+
+.ly_manager .finish {
+    height: 490px;
+    text-align: center
+}
+
+@media (max-width: 840px) {
+    .ly_manager .finish {
+        height: auto;
+        padding-bottom: 122px
+    }
+}
+
+.ly_manager .finish:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -4px -459px;
+    width: 62px;
+    height: 62px;
+    display: inline-block;
+    margin: 60px 0 21px;
+    content: ""
+}
+
+@media (max-width: 840px) {
+    .ly_manager .finish:before {
+        margin-top: 110px
+    }
+}
+
+.ly_manager .finish .title {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 33px;
+    word-break: break-word;
+    word-wrap: break-word;
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .ly_manager .finish .title {
+        margin: 0 24px;
+        font-size: 26px;
+        line-height: 31px
+    }
+}
+
+.ja_JP .ly_manager .finish .title {
+    word-break: keep-all
+}
+
+.ly_manager .finish .desc {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .ly_manager .finish .desc {
+        margin: 12px 24px 0
+    }
+}
+
+.ja_JP .ly_manager .finish .desc {
+    word-break: keep-all
+}
+
+.ly_manager .finish .link_group {
+    width: 360px;
+    margin: 53px auto 0
+}
+
+@media (max-width: 840px) {
+    .ly_manager .finish .link_group {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0 24px 18px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box
+    }
+}
+
+.ly_manager .finish .link_set {
+    display: block;
+    height: 43px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    line-height: 43px;
+    color: #444
+}
+
+.ly_manager .finish .link_set:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -39px;
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    margin: 15px 0 0 1px;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_manager .finish .link_set + .link_set {
+    margin-top: 8px
+}
+
+.ly_manager .finish .link_admin {
+    display: inline-block;
+    margin-top: 24px;
+    line-height: 17px;
+    color: #444
+}
+
+.ly_manager .finish .link_admin:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -39px;
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    margin: 2px 0 0 1px;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_manager .finish .link_admin:hover {
+    text-decoration: underline
+}
+
+@media (max-width: 840px) {
+    .ly_manager .finish .link_admin {
+        margin-top: 18px
+    }
+}
+
+.ly_manager .setting {
+    height: 550px
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting {
+        height: auto;
+        padding-bottom: 54px
+    }
+}
+
+.ly_manager .setting:after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+.ly_manager .setting .title_area {
+    position: relative;
+    float: left;
+    width: 380px;
+    height: 100%;
+    padding: 30px 34px;
+    background-color: #f9f9f9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .title_area {
+        width: 100%;
+        height: auto;
+        padding: 30px 24px 25px
+    }
+}
+
+.ly_manager .setting .title_area:after {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    width: 130px;
+    height: 130px;
+    content: ""
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .title_area:after {
+        position: static;
+        display: block;
+        margin: 25px 0 0 -6px;
+        width: 111px;
+        height: 111px
+    }
+}
+
+.ly_manager .setting .title_area.step_1:after {
+    background: url(https://static.worksmobile.net/static/pwe/wm/admin/onboarding/img_step_01.svg) no-repeat;
+    background-size: 100%
+}
+
+.ly_manager .setting .title_area.step_2:after {
+    background: url(https://static.worksmobile.net/static/pwe/wm/admin/onboarding/img_step_02.svg) no-repeat;
+    background-size: 100%
+}
+
+.ly_manager .setting .title_area.step_3:after {
+    background: url(https://static.worksmobile.net/static/pwe/wm/admin/onboarding/img_step_03.svg) no-repeat;
+    background-size: 100%
+}
+
+.ly_manager .setting .title_area.step_5:after {
+    background: url(https://static.worksmobile.net/static/pwe/wm/admin/onboarding/img_step_05.svg) no-repeat;
+    background-size: 100%
+}
+
+.ly_manager .setting .setting_area {
+    position: relative;
+    float: left;
+    width: 380px;
+    height: 100%;
+    padding: 60px 45px 46px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .setting_area {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 30px
+    }
+}
+
+.ly_manager .setting .title {
+    margin-top: 25px;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: -.5px;
+    word-break: break-word;
+    word-wrap: break-word
+}
+
+.ly_manager .setting .title strong {
+    font-weight: 700
+}
+
+.ly_manager .setting .title em {
+    font-weight: 700;
+    color: #157efb
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .title {
+        font-size: 30px;
+        line-height: 40px
+    }
+}
+
+.ja_JP .ly_manager .setting .title {
+    word-break: keep-all
+}
+
+.ly_manager .setting .desc {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -.1px;
+    word-break: break-word;
+    word-wrap: break-word
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .desc {
+        margin-top: 14px
+    }
+}
+
+.ja_JP .ly_manager .setting .desc {
+    word-break: keep-all
+}
+
+.ly_manager .setting .text_group {
+    text-align: center
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .text_group {
+        padding: 47px 0
+    }
+}
+
+.ly_manager .setting .text_group .text {
+    margin-top: 160px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #767676
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .text_group .text {
+        margin: 0
+    }
+}
+
+.ly_manager .setting .text_group .link_edit {
+    display: inline-block;
+    height: 32px;
+    margin-top: 15px;
+    padding: 0 20px;
+    border-radius: 4px;
+    border: 1px solid #c5c5c6;
+    line-height: 32px;
+    color: #222
+}
+
+.ly_manager .setting .text_group .info_text {
+    margin-top: 170px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #767676
+}
+
+.ly_manager .setting .text_group .info_text em {
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .text_group .info_text {
+        margin: 0
+    }
+}
+
+.ly_manager .setting .btn_group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    text-align: center
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .btn_group {
+        height: 53px;
+        border-top: 1px solid #ddd
+    }
+}
+
+.ly_manager .setting .btn_group .btn_prev {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #222
+}
+
+.ly_manager .setting .btn_group .btn_prev:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -60px;
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    margin: 1px 2px 0 0;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_manager .setting .btn_group .btn_prev:hover {
+    text-decoration: underline
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .btn_group .btn_prev {
+        top: 9px;
+        left: 4px;
+        font-size: 14px;
+        line-height: 17px
+    }
+}
+
+.ly_manager .setting .btn_group .btn_prev:disabled {
+    opacity: .4;
+    text-decoration: none
+}
+
+.ly_manager .setting .btn_group .btn_next {
+    position: absolute;
+    right: 8px;
+    top: 0;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -.4px;
+    color: #222
+}
+
+.ly_manager .setting .btn_group .btn_next:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -81px;
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    margin: 1px 0 0 2px;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_manager .setting .btn_group .btn_next:hover {
+    text-decoration: underline
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .btn_group .btn_next {
+        top: 9px;
+        right: 4px;
+        font-size: 14px;
+        line-height: 17px
+    }
+}
+
+.ly_manager .setting .btn_group .btn_next:disabled {
+    opacity: .4;
+    text-decoration: none
+}
+
+.ly_manager .setting .btn_group .btn_pass {
+    padding: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #767676
+}
+
+.ly_manager .setting .btn_group .btn_pass:hover {
+    text-decoration: underline
+}
+
+.ly_manager .setting .btn_group .btn_pass:disabled {
+    opacity: .4;
+    text-decoration: none
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .btn_group .btn_pass {
+        margin-top: 9px;
+        font-size: 14px;
+        line-height: 17px
+    }
+}
+
+.ly_manager .setting .check_group {
+    font-size: 0;
+    height: 425px;
+    margin-left: -20px;
+    padding-right: 8px;
+    overflow-y: auto;
+    color: #222
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .check_group {
+        height: auto;
+        margin: -8px 0 0 -19px;
+        overflow-y: visible
+    }
+}
+
+.ly_manager .setting .check_group::-webkit-scrollbar {
+    width: 8px
+}
+
+.ly_manager .setting .check_group::-webkit-scrollbar-thumb {
+    background-color: #bababa;
+    border-radius: 8px
+}
+
+.ly_manager .setting .check_group::-webkit-scrollbar-thumb:hover {
+    background-color: #bababa
+}
+
+.ly_manager .setting .check_group.line {
+    margin: 0
+}
+
+.ly_manager .setting .check_group.line .box_cover {
+    width: 100%;
+    padding: 0 0 8px 0
+}
+
+.ly_manager .setting .box_cover {
+    display: inline-block;
+    width: 50%;
+    padding: 0 0 8px 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .box_cover {
+        padding: 8px 0 0 19px
+    }
+}
+
+.ly_manager .setting .set_box_label {
+    display: block
+}
+
+.ly_manager .setting .set_box_label span {
+    display: block;
+    padding: 13px 18px 11px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-align: center;
+    line-height: 18px
+}
+
+.ly_manager .setting .set_radio {
+    display: none
+}
+
+.ly_manager .setting .set_radio:checked + span {
+    border: 1px solid #157efb;
+    font-weight: 700;
+    color: #157efb
+}
+
+.ly_manager .setting .alert_text {
+    font-size: 16px;
+    line-height: 20px;
+    color: #222
+}
+
+.ly_manager .setting .alert_text em {
+    color: #157efb
+}
+
+.ly_manager .setting .input_group {
+    margin-top: 25px;
+    padding-right: 6px;
+    max-height: 290px;
+    overflow-y: auto
+}
+
+.ly_manager .setting .input_group::-webkit-scrollbar {
+    width: 8px
+}
+
+.ly_manager .setting .input_group::-webkit-scrollbar-thumb {
+    background-color: #bababa;
+    border-radius: 8px
+}
+
+.ly_manager .setting .input_group::-webkit-scrollbar-thumb:hover {
+    background-color: #bababa
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .input_group {
+        max-height: none
+    }
+}
+
+.ly_manager .setting .input_item.recom {
+    position: relative
+}
+
+.ly_manager .setting .input_item.recom .set_input {
+    padding-right: 30px
+}
+
+.ly_manager .setting .input_item + .input_item {
+    margin-top: 10px
+}
+
+.ly_manager .setting .input_item.error .set_input {
+    border-color: #fd472b
+}
+
+.ly_manager .setting .input_item.error + .input_item {
+    margin-top: 8px
+}
+
+.ly_manager .setting .set_input {
+    width: 100%;
+    padding: 8px 2px 9px 2px;
+    line-height: 17px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #ddd;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0 none
+}
+
+.ly_manager .setting .set_input:focus {
+    border-color: #157efb
+}
+
+.ly_manager .setting .set_input::-ms-input-placeholder {
+    color: #989898
+}
+
+.ly_manager .setting .set_input::placeholder {
+    color: #989898
+}
+
+.ly_manager .setting .set_input::-webkit-input-placeholder {
+    color: #989898
+}
+
+.ly_manager .setting .set_input::-moz-placeholder {
+    color: #989898;
+    opacity: 1
+}
+
+.ly_manager .setting .set_input:-ms-input-placeholder {
+    color: #989898
+}
+
+.ly_manager .setting .set_input:-moz-placeholder {
+    color: #989898;
+    opacity: 1
+}
+
+.ly_manager .setting .btn_del {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -295px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: absolute;
+    right: 2px;
+    top: 9px
+}
+
+.ly_manager .setting .error_text {
+    display: inline-block;
+    margin: 8px 0 0 2px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fd472b
+}
+
+.ly_manager .setting .guide_text {
+    position: relative;
+    margin-top: 24px;
+    padding-left: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    color: #767676
+}
+
+.ly_manager .setting .guide_text:before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #767676;
+    content: ""
+}
+
+.ly_manager .setting .guide_text em {
+    color: #222
+}
+
+.ja_JP .ly_manager .setting .guide_text {
+    word-break: keep-all
+}
+
+.ly_manager .setting .check_item {
+    position: relative;
+    line-height: 18px
+}
+
+.ly_manager .setting .check_item + .check_item {
+    margin-top: 14px
+}
+
+.ly_manager .setting .check_item .set_input {
+    display: inline-block;
+    width: 243px;
+    padding: 7px 0 7px 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+@media (max-width: 840px) {
+    .ly_manager .setting .check_item .set_input {
+        width: calc(100% - 25px);
+        max-width: 280px
+    }
+}
+
+.ly_manager .setting .set_ck_label span {
+    display: inline-block;
+    line-height: 18px
+}
+
+.ly_manager .setting .set_ck_label span:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -501px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_manager .setting .set_checkbox:checked + span {
+    font-weight: 700;
+    color: #157efb
+}
+
+.ly_manager .setting .set_checkbox:checked + span:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -477px;
+    width: 16px;
+    height: 16px;
+    display: inline-block
+}
+
+.ly_manager .setting .btn_info, .ly_manager .setting .info_group {
+    display: inline-block;
+    vertical-align: top
+}
+
+.ly_manager .setting .btn_info {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -321px;
+    width: 16px;
+    height: 16px
+}
+
+.ly_manager .setting .ly_info {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 220px;
+    margin: 0 auto;
+    padding: 15px 32px 15px 15px;
+    border-radius: 2px;
+    border: 1px solid #989898;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 18px;
+    z-index: 2
+}
+
+.ly_manager .setting .ly_info .ly_info_close {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -102px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    right: 8px
+}
+
+.ly_mid_step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+@media (max-width: 840px) {
+    .ly_mid_step {
+        position: fixed;
+        left: 18px;
+        right: 17px
+    }
+}
+
+.ly_mid_step:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .25)
+}
+
+@media (max-width: 840px) {
+    .ly_mid_step:before {
+        left: -18px;
+        right: -17px
+    }
+}
+
+.ly_mid_step .ly_inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 340px;
+    padding: 30px 49px 84px 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    color: #222
+}
+
+.ly_mid_step .title {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px
+}
+
+.ly_mid_step .title em {
+    display: inline-block;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 700;
+    vertical-align: top;
+    color: #157efb
+}
+
+.ly_mid_step .input_group {
+    margin-top: 20px
+}
+
+.ly_mid_step .set_rdo_label {
+    display: block
+}
+
+.ly_mid_step .set_rdo_label + .set_rdo_label {
+    margin-top: 10px
+}
+
+.ly_mid_step .set_rdo_label span {
+    display: inline-block;
+    max-width: 100%;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.ly_mid_step .set_rdo_label span:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -345px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_mid_step .set_radio:checked + span {
+    font-weight: 700;
+    color: #157efb
+}
+
+.ly_mid_step .set_radio:checked + span:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -453px;
+    width: 16px;
+    height: 16px;
+    display: inline-block
+}
+
+.ly_mid_step .btn_group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 49px;
+    border-top: 1px solid #ddd;
+    text-align: center
+}
+
+.ly_mid_step .btn_group .btn_prev {
+    position: absolute;
+    left: 2px;
+    top: 7px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #222
+}
+
+.ly_mid_step .btn_group .btn_prev:before {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -60px;
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    margin: 1px 2px 0 0;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_mid_step .btn_group .btn_prev:hover {
+    text-decoration: underline
+}
+
+.ly_mid_step .btn_group .btn_prev:disabled {
+    opacity: .4;
+    text-decoration: none
+}
+
+.ly_mid_step .btn_group .btn_next {
+    position: absolute;
+    right: 2px;
+    top: 7px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -.4px;
+    color: #222
+}
+
+.ly_mid_step .btn_group .btn_next:after {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -142px -81px;
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    margin: 1px 0 0 2px;
+    vertical-align: top;
+    content: ""
+}
+
+.ly_mid_step .btn_group .btn_next:hover {
+    text-decoration: underline
+}
+
+.ly_mid_step .btn_group .btn_next:disabled {
+    opacity: .4;
+    text-decoration: none
+}
+
+.ly_mid_step .btn_group .btn_pass {
+    margin-top: 7px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #767676
+}
+
+.ly_mid_step .btn_group .btn_pass:hover {
+    text-decoration: underline
+}
+
+.ly_mid_step .btn_group .btn_pass:disabled {
+    opacity: .4;
+    text-decoration: none
+}
+
+.ly_mid_step .btn_ly_close {
+    background-image: url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9b0dd7ff.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-image: linear-gradient(transparent, transparent), url(https://static.worksmobile.net/static/wm/admin/sp_configuration_9289f279.svg);
+    background-size: 586px 525px;
+    background-position: -550px -267px;
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}

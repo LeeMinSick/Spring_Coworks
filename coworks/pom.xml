@@ -27,6 +27,7 @@
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
 			</exclusions>
+
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -233,8 +234,6 @@
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
-
 	</dependencies>
 	<build>
 		<plugins>
