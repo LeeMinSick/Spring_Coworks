@@ -32,7 +32,7 @@ public class CommentController {
 	@PostMapping(value = "/new",
 			consumes = "application/json",
 			produces = { MediaType.TEXT_PLAIN_VALUE} )
-	public ResponseEntity<String> create(@RequestBody CommentVO commentVO){
+	public ResponseEntity<String> createComment(@RequestBody CommentVO commentVO){
 		commentVO.setComment_name("고길동");
 		int insertCount = service.insertCommentService(commentVO);
 		
@@ -45,7 +45,7 @@ public class CommentController {
 			produces = {
 					MediaType.APPLICATION_JSON_VALUE,
 					MediaType.APPLICATION_XML_VALUE})
-	public ResponseEntity<CommentPageDTO> getList(@PathVariable("posting_number") Long posting_number){
+	public ResponseEntity<CommentPageDTO> getCommentList(@PathVariable("posting_number") Long posting_number){
 		
 		return new ResponseEntity<>(service.getListCommentService(posting_number), HttpStatus.OK);
 	
@@ -55,14 +55,14 @@ public class CommentController {
 			produces = {
 					MediaType.APPLICATION_JSON_VALUE,
 					MediaType.APPLICATION_XML_VALUE})
-	public ResponseEntity<CommentVO> get(@PathVariable("comment_number") Long comment_number){
+	public ResponseEntity<CommentVO> getComment(@PathVariable("comment_number") Long comment_number){
 		
 		return new ResponseEntity<>(service.getCommentService(comment_number), HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value = "/{comment_number}",
 			produces = {MediaType.TEXT_PLAIN_VALUE})
-	public ResponseEntity<String> remove(@PathVariable("comment_number") Long comment_number){
+	public ResponseEntity<String> removeComment(@PathVariable("comment_number") Long comment_number){
 		
 		return service.deleteCommentService(comment_number) == 1
 				? new ResponseEntity<>("success", HttpStatus.OK)
@@ -73,7 +73,7 @@ public class CommentController {
 			value = "/{comment_number}",
 			consumes = "application/json",
 			produces = { MediaType.TEXT_PLAIN_VALUE })
-	public ResponseEntity<String> modify(
+	public ResponseEntity<String> modifyComment(
 			@RequestBody CommentVO commentVO,
 			@PathVariable("comment_number") Long comment_number){
 		

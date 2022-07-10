@@ -55,14 +55,13 @@ public class BoardController {
 	
 
 	@PostMapping("/update-board")//게시판 수정
-	public String updatePosting(BoardVO board) {
-		System.out.println(board + " ssssssssssssssssssssssssssssssssssssssssssssss");
+	public String updateBoard(BoardVO board) {
 		BoardService.updateBoardService(board);
 		return "redirect:/administration/list-board";
 	}
 	
 	@PostMapping("/delete-all-board")//게시판 리스트 모두 삭제
-	public String deletePostingList(HttpServletRequest request, Model model) {
+	public String deleteBoardList(HttpServletRequest request, Model model) {
 		int result = 0;
 		result = BoardService.deleteBoardListService(request);
 		

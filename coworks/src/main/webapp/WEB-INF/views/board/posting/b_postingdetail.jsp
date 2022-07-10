@@ -77,106 +77,85 @@ h1 {
 <c:set var="posting" value="${posting}"></c:set>
 	<!-- ======= Header ======= -->
 	<header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center" id="nev">
+		<div class="container d-flex align-items-center" id="nev">
 
-      <h1 class="logo me-auto"><a href="/board/main">Coworks</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+			<h1 class="logo me-auto">
+				<a href="/board/main">Coworks</a>
+			</h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="active" href="/board/main">Board</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Trainers</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Pricing</a></li>
+			<nav id="navbar" class="navbar order-last order-lg-0">
+				<ul>
+					<li><a class="active" href="/board/main">Board</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Courses</a></li>
+					<li><a href="#">Trainers</a></li>
+					<li><a href="#">Events</a></li>
+					<li><a href="#">Pricing</a></li>
 
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-        
-        
-      </nav><!-- .navbar -->
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<i class="bi bi-list mobile-nav-toggle"></i>
+			</nav>
+			<!-- .navbar -->
 
-      <a href="#" class="get-started-btn">Get Started</a>
-	<div class="nav-item dropdown pe-3" id="profile">
+			<div class="nav-item dropdown pe-3" id="profile">
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-          </a><!-- End Profile Iamge Icon -->
+				<div class="user_profile">
+				
+						<a href="/administration/list-board"><img
+							src="https://static.worksmobile.net/static/pwe/wm/common/img_profile2.png"
+							width="32" height="32" alt="프로필 사진"></a>
+					</div>
+				<!-- End Profile Iamge Icon -->
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+				<ul
+					class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+					<li class="dropdown-header">
+						<h6>Kevin Anderson</h6> <span>Web Designer</span>
+					</li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+					<li><a class="dropdown-item d-flex align-items-center"
+						href="users-profile.html"> <i class="bi bi-person"></i> <span>My
+								Profile</span>
+					</a></li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+					<li><a class="dropdown-item d-flex align-items-center"
+						href="users-profile.html"> <i class="bi bi-gear"></i> <span>Account
+								Settings</span>
+					</a></li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+					<li><a class="dropdown-item d-flex align-items-center"
+						href="pages-faq.html"> <i class="bi bi-question-circle"></i> <span>Need
+								Help?</span>
+					</a></li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
+					<li><a class="dropdown-item d-flex align-items-center"
+						href="#"> <i class="bi bi-box-arrow-right"></i> <span>Sign
+								Out</span>
+					</a></li>
 
-          </ul><!-- End Profile Dropdown Items -->
-        </div>
-    </div>
-    
-    
-    
-  </header><!-- End Header -->
+				</ul>
+				<!-- End Profile Dropdown Items -->
+			</div>
+		</div>
+
+
+
+	</header>
 
 <aside id="sidebar" class="sidebar">
 
